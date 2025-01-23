@@ -1,0 +1,6 @@
+.deploy_git/
+.github/
+db.json
+node_modules/
+public/
+temp/

@@ -1,0 +1,25 @@
+aboutleftbar:
+  layout: linklist
+  columns: 1
+  items:
+    - icon: me
+      title: 关于
+      url: /about/
+    - icon: todo-done
+      title: 待办清单
+      url: /about/todo
+    - icon: link
+      title: 链接收藏
+      url: /about/link
+    - icon: apartment
+      title: 家具更新
+      url: /about/apartment
+
+
+linkleftbar:
+  layout: linklist
+  columns: 1 
+  items:
+    - icon: 
+      title: 关于
+      url: /link/
