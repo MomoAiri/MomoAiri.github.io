@@ -20,9 +20,7 @@ git config --global https.proxy https://127.0.0.1:<VPN run port>
 
 > 使用 ssh 的版本
 
-```
 到 C:\Users\<User Name>\.ssh 目录下，新建一个 config 文件（无后缀名）
-```
 
 ```
 ProxyCommand "C:\Program Files\Git\mingw64\bin\connect" -S 127.0.0.1:<VPN run port> -a none %h %p
