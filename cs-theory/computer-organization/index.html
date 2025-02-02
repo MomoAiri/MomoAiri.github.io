@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 7.3.0">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,16 +17,20 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>归档 - MomoAiri</title>
+  <title>计算机组成原理 - MomoAiri</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://momoairi.github.io/archives/2023/06/index.html">
+    <meta name="description" content="计算机组成原理存储和运算定点数补码移码浮点数IEEE 754内部存储器存储系统DRAM、SRAM、ROMDRAM 使用栅极电容存储信息。   一般以 2ms 周期刷新。 破坏性读出，需要重写。 使用行列地址减少选通线数量。 使用行列地址分两次送的方式减少地址线数量。  SRAM 使用双稳态触发器存储信息。  无需重写和刷新，元件复杂导致集成度较低。 ROMMROM -&gt; PROM -&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理">
+<meta property="og:url" content="https://momoairi.github.io/cs-theory/computer-organization/index.html">
 <meta property="og:site_name" content="MomoAiri">
+<meta property="og:description" content="计算机组成原理存储和运算定点数补码移码浮点数IEEE 754内部存储器存储系统DRAM、SRAM、ROMDRAM 使用栅极电容存储信息。   一般以 2ms 周期刷新。 破坏性读出，需要重写。 使用行列地址减少选通线数量。 使用行列地址分两次送的方式减少地址线数量。  SRAM 使用双稳态触发器存储信息。  无需重写和刷新，元件复杂导致集成度较低。 ROMMROM -&gt; PROM -&gt;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-02T04:03:44.442Z">
 <meta property="article:author" content="MomoAiri">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
@@ -48,7 +52,7 @@
 </head>
 <body>
 
-<div class="l_body s:aa index tech" id="start" layout="undefined" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://github.com/MomoAiri/MomoAiri.github.io/blob/dev/source/_images/avatar.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">MomoAiri</div></a></div></header>
@@ -60,21 +64,122 @@
 <nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="1.28em" height="1.2em" viewBox="0 0 34 32"><g fill="currentColor"><path d="M1.512 28H19.5c.827 0 1.5-.673 1.5-1.5v-19c0-.023-.01-.043-.013-.065a.4.4 0 0 0-.013-.062a.5.5 0 0 0-.122-.227L13.853.147a.5.5 0 0 0-.289-.135C13.543.01 13.523 0 13.5 0H1.506C.676 0 0 .673 0 1.5v25c0 .827.678 1.5 1.512 1.5M14 1.707L19.293 7H14.5a.5.5 0 0 1-.5-.5zM1 1.5c0-.276.227-.5.506-.5H13v5.5c0 .827.673 1.5 1.5 1.5H20v18.5a.5.5 0 0 1-.5.5H1.512A.506.506 0 0 1 1 26.5z"/><path d="M4.5 12h12a.5.5 0 0 0 0-1h-12a.5.5 0 0 0 0 1m0 4h12a.5.5 0 0 0 0-1h-12a.5.5 0 0 0 0 1m0-8h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0 0 1m0 12h12a.5.5 0 0 0 0-1h-12a.5.5 0 0 0 0 1m0 4h12a.5.5 0 0 0 0-1h-12a.5.5 0 0 0 0 1"/><path d="M21.5 5H26v5.5c0 .827.673 1.5 1.5 1.5H33v18.5a.5.5 0 0 1-.5.5H14.512a.506.506 0 0 1-.512-.5v-1a.5.5 0 0 0-1 0v1c0 .827.678 1.5 1.512 1.5H32.5c.827 0 1.5-.673 1.5-1.5v-19c0-.023-.01-.043-.013-.065a.4.4 0 0 0-.013-.062a.5.5 0 0 0-.122-.227l-6.999-6.999a.5.5 0 0 0-.289-.134C26.543 4.01 26.523 4 26.5 4h-5a.5.5 0 0 0 0 1m6 6a.5.5 0 0 1-.5-.5V5.707L32.293 11z"/><path d="M23.5 16h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0 0 1m0 4h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0 0 1m0 4h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0 0 1m0 4h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0 0 1"/></g></svg></a><a class="nav-item" title="文档" href="/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="1.58em" height="1.2em" viewBox="0 0 42 32"><g fill="currentColor"><path d="M37.5 1h-16c-.397 0-.74.136-1 .362a1.5 1.5 0 0 0-1-.362h-16C2.631 1 2 1.631 2 2.5v28c0 .869.631 1.5 1.5 1.5h16c.397 0 .74-.136 1-.362c.26.226.603.362 1 .362h16c.869 0 1.5-.631 1.5-1.5v-28c0-.869-.631-1.5-1.5-1.5m-18 30h-16c-.313 0-.5-.187-.5-.5v-28c0-.313.187-.5.5-.5h16c.313 0 .5.187.5.5v28c0 .313-.187.5-.5.5m18.5-.5c0 .313-.187.5-.5.5h-16c-.313 0-.5-.187-.5-.5v-28c0-.313.187-.5.5-.5h16c.313 0 .5.187.5.5zM40.5 3a.5.5 0 0 0-.5.5v26a.5.5 0 0 0 1 0v-26a.5.5 0 0 0-.5-.5M.5 30a.5.5 0 0 0 .5-.5v-26a.5.5 0 0 0-1 0v26a.5.5 0 0 0 .5.5"/><path d="M17.5 10h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 4h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0-8h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 12h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 4h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 4h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m18-16h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 4h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0-8h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 12h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 4h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1m0 4h-12a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1"/></g></svg></a></nav>
 </div>
 <div class="widgets">
+
+
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/cs-theory/data_structure/"><span class="title">数据结构</span></a><a class="item title" href="/cs-theory/computer-organization/"><span class="title">计算机组成原理</span></a><a class="item title" href="/game-devs/fast-inverse-square-root/"><span class="title">快速求平方根的倒数</span></a><a class="item title" href="/devops/install-win11/"><span class="title">Win11 重装</span></a><a class="item title" href="/devops/github-timeout/"><span class="title">GitHub 在终端超时</span></a><a class="item title" href="/devops/vscode-terminal/"><span class="title">VSCode Terminal</span></a><a class="item title" href="/practices/vscode-extension/"><span class="title">开发 VSCode 扩展</span></a><a class="item title" href="/practices/hexo-deploy/"><span class="title">Hexo 部署</span></a><a class="item title" href="/perspective/renting-place/"><span class="title">租房</span></a><a class="item title" href="/devops/npm-timeout/"><span class="title">npm 超时</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://github.com/MomoAiri/MomoAiri.github.io/blob/dev/source/_images/avatar.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">MomoAiri</div></a></div></header>
-
- 
 
 
-<div class="navbar top"><nav class="post"><a href="/">近期发布</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a class="active" href="/archives/">归档</a></nav></div><div class="post-list archives"><article class="" id="archive"><div class='archive-header h4'>2025</div><div class="archive-list"><a class='post fs14' href="/cs-langs/cpp8gu/"><time>02-02</time><span>2025-02-02</span></a></div><div class="archive-list"><a class='post fs14' href="/cs-theory/computer-organization/"><time>02-02</time><span>计算机组成原理</span></a></div><div class="archive-list"><a class='post fs14' href="/cs-theory/data_structure/"><time>02-02</time><span>数据结构</span></a></div><div class="archive-list"><a class='post fs14' href="/perspective/renting-place/"><time>01-24</time><span>租房</span></a></div><div class="archive-list"><a class='post fs14' href="/devops/install-win11/"><time>01-20</time><span>Win11 重装</span></a></div><div class="archive-list"><a class='post fs14' href="/devops/github-timeout/"><time>01-20</time><span>GitHub 在终端超时</span></a></div><div class="archive-list"><a class='post fs14' href="/devops/vscode-terminal/"><time>01-20</time><span>VSCode Terminal</span></a></div></article><article class="" id="archive"><div class='archive-header h4'>2024</div><div class="archive-list"><a class='post fs14' href="/practices/vscode-extension/"><time>12-09</time><span>开发 VSCode 扩展</span></a></div><div class="archive-list"><a class='post fs14' href="/devops/airi-flow/"><time>09-16</time><span>AiriFlow</span></a></div><div class="archive-list"><a class='post fs14' href="/game-devs/eggy/"><time>09-16</time><span>蛋仔派对</span></a></div><div class="archive-list"><a class='post fs14' href="/devops/npm-timeout/"><time>06-11</time><span>npm 超时</span></a></div></article><article class="" id="archive"><div class='archive-header h4'>2023</div><div class="archive-list"><a class='post fs14' href="/game-devs/fast-inverse-square-root/"><time>11-23</time><span>快速求平方根的倒数</span></a></div><div class="archive-list"><a class='post fs14' href="/langs/language-classification/"><time>08-02</time><span>语言类型划分</span></a></div><div class="archive-list"><a class='post fs14' href="/practices/hexo-deploy/"><time>06-07</time><span>Hexo 部署</span></a></div></article></div>
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/cs-theory/">cs-theory</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-02-01T16:00:00.000Z">2025-02-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-02-02T04:03:44.442Z">2025-02-02</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>计算机组成原理</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><h2 id="存储和运算"><a href="#存储和运算" class="headerlink" title="存储和运算"></a>存储和运算</h2><h3 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h3><h4 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h4><h4 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h4><h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><h4 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h4><h3 id="内部存储器"><a href="#内部存储器" class="headerlink" title="内部存储器"></a>内部存储器</h3><h2 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h2><h3 id="DRAM、SRAM、ROM"><a href="#DRAM、SRAM、ROM" class="headerlink" title="DRAM、SRAM、ROM"></a>DRAM、SRAM、ROM</h3><h4 id="DRAM"><a href="#DRAM" class="headerlink" title="DRAM"></a>DRAM</h4><blockquote>
+<p>使用栅极电容存储信息。</p>
+</blockquote>
+<ul>
+<li>一般以 2ms 周期刷新。</li>
+<li>破坏性读出，需要重写。</li>
+<li>使用行列地址减少选通线数量。</li>
+<li>使用行列地址分两次送的方式减少地址线数量。</li>
+</ul>
+<h4 id="SRAM"><a href="#SRAM" class="headerlink" title="SRAM"></a>SRAM</h4><blockquote>
+<p>使用双稳态触发器存储信息。</p>
+</blockquote>
+<p>无需重写和刷新，元件复杂导致集成度较低。</p>
+<h4 id="ROM"><a href="#ROM" class="headerlink" title="ROM"></a>ROM</h4><p>MROM -&gt; PROM -&gt; EPROM -&gt; EEPROM -&gt; Flash Memory -&gt; SSD</p>
+<p>BIOS: 自举装入程序。</p>
+<h3 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h3><blockquote>
+<p>BIOS ROM + RAM</p>
+</blockquote>
+<h4 id="主存与-CPU-连接"><a href="#主存与-CPU-连接" class="headerlink" title="主存与 CPU 连接"></a>主存与 CPU 连接</h4><p>主存器通过数据总线，地址总线和控制总线与 CPU 连接。地址总线的位数决定了可寻址的最大内存空间。控制总线指出总线周期类型和本次输入输出操作完成的时刻。</p>
+<h4 id="位扩展法"><a href="#位扩展法" class="headerlink" title="位扩展法"></a>位扩展法</h4><p>每个存储器的数据线都并行连接在CPU的数据总线上，而地址位数是串行相连。</p>
+<h4 id="字扩展法"><a href="#字扩展法" class="headerlink" title="字扩展法"></a>字扩展法</h4><p>通过译码器，将多个字数相同的存储芯片并联起来，增加位数，并且存储空间是连续的。</p>
+<p>字扩展方法只能增加主存储器的容量，存取速度没有提升。</p>
+<h4 id="双端口-RAM"><a href="#双端口-RAM" class="headerlink" title="双端口 RAM"></a>双端口 RAM</h4><p>支持两个 CPU 同时访问取数据。</p>
+<h4 id="单体多字存储器"><a href="#单体多字存储器" class="headerlink" title="单体多字存储器"></a>单体多字存储器</h4><h4 id="多体并行存储器"><a href="#多体并行存储器" class="headerlink" title="多体并行存储器"></a>多体并行存储器</h4><p>高位交叉编址（$nT$）和低位交叉编址（$T + (n - 1)r$），编组的模块数 $m \ge T&#x2F;r$。</p>
+<h3 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h3><p>在现在的系统中，处理器需要上百个时钟周期才能从主存中取到数据。如果没有cache，处理器在等待数据的大部分时间内将会停滞不动。</p>
+<h4 id="时间局部性原理和空间局部性原理"><a href="#时间局部性原理和空间局部性原理" class="headerlink" title="时间局部性原理和空间局部性原理"></a>时间局部性原理和空间局部性原理</h4><p>如果一个数据现在被访问了，那么以后很有可能也会被访问。如果一个数据现在被访问了，那么它周围的数据在以后可能也会被访问。</p>
+<h4 id="映射方式"><a href="#映射方式" class="headerlink" title="映射方式"></a>映射方式</h4><ol>
+<li>全相联映射——主存块可以放在 Cache 的任意位置。</li>
+<li>直接映射——每个主存块只能放在一个特定的位置。Cache块号 &#x3D; 主存块号 % Cache块总数。</li>
+<li>组相联映射——Cache块分为若干组，每个主存块可以放到特定分组中的任意一个位置。组号 &#x3D; 主存块号 % 分组数</li>
+</ol>
+<h4 id="替换算法"><a href="#替换算法" class="headerlink" title="替换算法"></a>替换算法</h4><ol>
+<li>随机算法(RAND)</li>
+<li>先进先出算法(FIFO)</li>
+<li>近期最少使用(LRU)</li>
+</ol>
+<h4 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h4><p>命中时：</p>
+<ol>
+<li>回写法：当CPU对Cache写命中时，只修改Cache的内容，而不立即写入主存，只有当次块被换出时才写回主存。减少了访存次数，但存在数据不一致的隐患。</li>
+<li>全写法：当CPU对Cache写命中时，必须把数据同时写入Cache和主存，一般使用写缓冲。访存次数增加，速度变慢，但是能保证数据的一致性。无脏位。</li>
+</ol>
+<p>不命中时：</p>
+<ol>
+<li>写分配法——当CPU对Cache不命中时，把主存中的块调入Cache，在Cache中修改。通常搭配回写法使用，改完后要被换出，才在主存中修改。</li>
+<li>非写分配法——当CPU对Cache写不命中时，只写入主存，不调入Cache，搭配全写法使用。</li>
+</ol>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><h3 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h3><h2 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h2><h3 id="指令集"><a href="#指令集" class="headerlink" title="指令集"></a>指令集</h3><h3 id="机器码"><a href="#机器码" class="headerlink" title="机器码"></a>机器码</h3><h2 id="中央处理器"><a href="#中央处理器" class="headerlink" title="中央处理器"></a>中央处理器</h2><h2 id="I-O"><a href="#I-O" class="headerlink" title="I&#x2F;O"></a>I&#x2F;O</h2><h3 id="外部存储器"><a href="#外部存储器" class="headerlink" title="外部存储器"></a>外部存储器</h3><h3 id="I-O-控制方式"><a href="#I-O-控制方式" class="headerlink" title="I&#x2F;O 控制方式"></a>I&#x2F;O 控制方式</h3><h4 id="查询方式"><a href="#查询方式" class="headerlink" title="查询方式"></a>查询方式</h4><h4 id="中断方式"><a href="#中断方式" class="headerlink" title="中断方式"></a>中断方式</h4><h2 id="处理器设计"><a href="#处理器设计" class="headerlink" title="处理器设计"></a>处理器设计</h2><h3 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h3><h3 id="控制冒险、数据冒险和分支预测"><a href="#控制冒险、数据冒险和分支预测" class="headerlink" title="控制冒险、数据冒险和分支预测"></a>控制冒险、数据冒险和分支预测</h3><h3 id="异常和中断"><a href="#异常和中断" class="headerlink" title="异常和中断"></a>异常和中断</h3><h3 id="SIMD-和并行计算"><a href="#SIMD-和并行计算" class="headerlink" title="SIMD 和并行计算"></a>SIMD 和并行计算</h3><h3 id="GPU-和-NUMA"><a href="#GPU-和-NUMA" class="headerlink" title="GPU 和 NUMA"></a>GPU 和 NUMA</h3>
+<div class="article-footer fs14">
+    <section id="references">
+      <div class="header"><span>参考资料</span></div>
+      <div class="body">
+        <ul>
+        <li class="post-title">
+          <p><a target="_blank" rel="noopener" href="https://learn.lianglianglee.com/%E4%B8%93%E6%A0%8F/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">深入浅出计算机组成原理</a></p>
+
+        </li>
+        
+        <li class="post-title">
+          <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/554546968">计算机组成原理(万字爆肝整理)</a></p>
+
+        </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/cs-langs/cpp8gu/">2025-02-02</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/cs-theory/data_structure/">数据结构</a></div></section></div>
+
+
+
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">MomoAiri</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86"><span class="toc-text">计算机组成原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-text">存储和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0"><span class="toc-text">定点数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81"><span class="toc-text">补码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E7%A0%81"><span class="toc-text">移码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-text">浮点数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IEEE-754"><span class="toc-text">IEEE 754</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">内部存储器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-text">存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DRAM%E3%80%81SRAM%E3%80%81ROM"><span class="toc-text">DRAM、SRAM、ROM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DRAM"><span class="toc-text">DRAM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SRAM"><span class="toc-text">SRAM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ROM"><span class="toc-text">ROM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">主存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E4%B8%8E-CPU-%E8%BF%9E%E6%8E%A5"><span class="toc-text">主存与 CPU 连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E6%89%A9%E5%B1%95%E6%B3%95"><span class="toc-text">位扩展法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E6%89%A9%E5%B1%95%E6%B3%95"><span class="toc-text">字扩展法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E7%AB%AF%E5%8F%A3-RAM"><span class="toc-text">双端口 RAM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BD%93%E5%A4%9A%E5%AD%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">单体多字存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E4%BD%93%E5%B9%B6%E8%A1%8C%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">多体并行存储器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache"><span class="toc-text">Cache</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86%E5%92%8C%E7%A9%BA%E9%97%B4%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-text">时间局部性原理和空间局部性原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E6%96%B9%E5%BC%8F"><span class="toc-text">映射方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">替换算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99%E7%AD%96%E7%95%A5"><span class="toc-text">写策略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-text">虚拟内存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-text">指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-text">指令集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E7%A0%81"><span class="toc-text">机器码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">中央处理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-O"><span class="toc-text">I&#x2F;O</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">外部存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O-%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="toc-text">I&#x2F;O 控制方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F"><span class="toc-text">查询方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F"><span class="toc-text">中断方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="toc-text">处理器设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-text">流水线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%86%92%E9%99%A9%E3%80%81%E6%95%B0%E6%8D%AE%E5%86%92%E9%99%A9%E5%92%8C%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B"><span class="toc-text">控制冒险、数据冒险和分支预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%92%8C%E4%B8%AD%E6%96%AD"><span class="toc-text">异常和中断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SIMD-%E5%92%8C%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97"><span class="toc-text">SIMD 和并行计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GPU-%E5%92%8C-NUMA"><span class="toc-text">GPU 和 NUMA</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
