@@ -11,9 +11,6 @@ aboutleftbar:
     - icon: link
       title: 链接收藏
       url: /about/link
-    - icon: apartment
-      title: 家具更新
-      url: /about/apartment
 
 
 linkleftbar:
