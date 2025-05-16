@@ -14,7 +14,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Setup Hugo Extended  # 重点修改这里
+      - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
@@ -29,3 +29,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: master
+          force_orphan: true  # 确保每次部署都是全新提交，避免历史冲突
