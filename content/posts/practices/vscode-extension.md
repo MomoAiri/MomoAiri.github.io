@@ -10,6 +10,8 @@ references: [
 ]
 ---
 
+<!--more-->
+
 # 开发 VSCode 扩展
 
 ## 环境设置

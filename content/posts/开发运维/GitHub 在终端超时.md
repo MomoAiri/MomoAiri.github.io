@@ -6,6 +6,8 @@ categories: ["开发运维"]
 tags: ["Git", "GitHub"]
 ---
 
+<!--more-->
+
 # GitHub 在终端超时
 
 > 遇到 GitHub 访问正常，但在 Shell 里 clone 超时，使用下面这个代理一下。
