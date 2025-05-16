@@ -2,16 +2,11 @@ name: Deploy Hugo Site to GitHub Pages
 
 on:
   push:
-    branches: [dev]
+    branches: [ dev ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:  # 明确声明所需权限
-      contents: write  # 允许推送代码
-      pages: write     # 允许部署 Pages
-      id-token: write  # 允许 OIDC 认证（可选）
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,10 +14,11 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Setup Hugo
+      - name: Setup Hugo Extended  # 重点修改这里
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
+          extended: true
 
       - name: Build
         run: hugo --minify
