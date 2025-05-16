@@ -2,34 +2,34 @@ name: Deploy Hugo Site to GitHub Pages
 
 on:
   push:
-    branches: [ dev ]  # 当 dev 分支有推送时触发
+    branches: [dev]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # 使用 GitHub 提供的 Ubuntu 环境
+    runs-on: ubuntu-latest
+    permissions:  # 明确声明所需权限
+      contents: write  # 允许推送代码
+      pages: write     # 允许部署 Pages
+      id-token: write  # 允许 OIDC 认证（可选）
 
     steps:
-      # 1. 检出代码（包括子模块，如果你的主题是 Git 子模块）
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
 
-      # 2. 安装 Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"  # 使用最新版 Hugo
+          hugo-version: "latest"
 
-      # 3. 构建 Hugo 站点（生成 public/ 目录）
       - name: Build
-        run: hugo --minify  # --minify 用于压缩 HTML/CSS/JS
+        run: hugo --minify
 
-      # 4. 部署到 GitHub Pages（推送到 master 分支）
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub 自动提供的 token
-          publish_dir: ./public  # 要部署的目录
-          publish_branch: master  # 推送到 master 分支（GitHub Pages 默认分支）
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
