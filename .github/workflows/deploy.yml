@@ -31,4 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: master
-          force_orphan: true  # 确保每次部署都是全新提交，避免历史冲突
+          force_orphan: true
