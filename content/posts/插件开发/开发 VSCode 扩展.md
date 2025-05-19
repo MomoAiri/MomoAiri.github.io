@@ -1,9 +1,9 @@
 ---
 title: 开发 VSCode 扩展
 date: 2024-12-09
-url: vscode-extension
-categories: ["practices"]
-tags: ["VSCode", "Extension Development"]
+url: 插件开发/vscode-extension
+categories: ["插件开发"]
+tags: ["VSCode", ]
 references: [
 	"[Extension API](https://code.visualstudio.com/api)",
 	"[Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension)"

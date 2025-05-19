@@ -52,8 +52,6 @@
             {{ .Date | time.Format "Monday, Jan 2, 2006" }}
           {{ end }}
 
-          | <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
-
           {{ if ne .Params.nolastmod true }}
           | <span>{{ T "updatedAt" }}
             {{ if site.Params.Experimental.jsDate }}
@@ -64,14 +62,6 @@
           {{ end }}
         </p>
 
-        {{ $hasAuthor := or .Params.author site.Params.author }}
-        <div class="flex justify-between">
-          {{ if $hasAuthor }}
-            {{ partial "author.html" (dict "Params" .Params "template" "single") }}
-          {{ end }}
-
-          {{ partial "share.html" . }}
-        </div>
       </header>
 
       <section id="dream-single-post-content" itemprop="articleBody">

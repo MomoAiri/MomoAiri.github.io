@@ -2,7 +2,7 @@ baseurl = "https://momoairi.github.io/"
 defaultContentLanguage = "zh"
 languageCode = "zh"
 title = "MomoAiri"
-theme = "snnmena"
+theme = "dream"
 
 # [services]
 # [services.disqus]
@@ -11,7 +11,6 @@ theme = "snnmena"
 # ID = ""
 
 [params]
-# zenMode = true
 
 lightTheme = "emerald"
 darkTheme = "forest"
@@ -49,7 +48,7 @@ siteStartYear = 2022
 
 # options
 # stickyNav = true
-# reorderNavItems = ["about", "search", "rss", "posts", "categories", "tags"]
+reorderNavItems = ["about", "search", "rss", "posts", "categories", "tags"]
 # collapseNavItems = ["posts", "categories", "tags"]
 # noDefaultSummaryCover = true
 # showTableOfContents = true
