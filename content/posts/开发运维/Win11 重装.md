@@ -1,17 +1,16 @@
 ---
 title: Win11 重装
 date: 2025-01-20
-url: install-win11
 categories: ["开发运维"]
 tags: []
-references: [
-	'[Microsoft Activation Scripts (MAS)](https://massgrave.dev/)', 
-]
+url: win11-reinstall
 ---
 
 <!--more-->
 
 # Win11 重装
+
+为了 mac 上早就有的文件管理器的分页功能，捏着鼻子用屎一样的右键更多选项，找到了一个很好用的激活工具 [Microsoft Activation Scripts (MAS)](https://massgrave.dev/)。
 
 **安装时绕过网络**
 

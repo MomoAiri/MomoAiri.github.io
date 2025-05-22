@@ -9,7 +9,3 @@ cover: https://raw.githubusercontent.com/MomoAiri/MomoAiri.github.io/refs/heads/
 <!--more-->
 
 # C++ 八股文复习
-
-## 基础
-
-### 

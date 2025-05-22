@@ -1,9 +1,9 @@
 ---
-title: 蛋仔派对
+title: Eggy
 date: 2024-09-16
-url: eggy
-categories: ["game"]
+categories: ["游戏开发"]
 tags: ["Eggy", "NetEase"]
+url: eggy
 ---
 
 <!--more-->

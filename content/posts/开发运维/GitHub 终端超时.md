@@ -1,14 +1,14 @@
 ---
-title: GitHub 在终端超时
+title: GitHub 终端超时
 date: 2025-01-20
-url: github-timeout
 categories: ["开发运维"]
 tags: ["Git", "GitHub"]
+url: github-timeout
 ---
 
 <!--more-->
 
-# GitHub 在终端超时
+# GitHub 终端超时
 
 > 遇到 GitHub 访问正常，但在 Shell 里 clone 超时，使用下面这个代理一下。
 

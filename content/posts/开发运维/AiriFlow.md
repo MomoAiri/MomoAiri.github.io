@@ -1,12 +1,9 @@
 ---
 title: AiriFlow
 date: 2024-09-16
-url: airi-flow
 categories: ["开发运维"]
 tags: ["Git", "Gitlab", "GitHub"]
-references: [
-	'[十分钟学会正确的github工作流，和开源作者们使用同一套流程](https://www.bilibili.com/video/BV19e4y1q7JJ)', 
-]
+url: airi-flow
 ---
 
 <!--more-->
@@ -14,6 +11,8 @@ references: [
 # AiriFlow
 
 学习微软的 Git 开发流程后，取其糟粕、去其精华（大雾）的个人版本控制流程。
+
+- [十分钟学会正确的github工作流，和开源作者们使用同一套流程](https://www.bilibili.com/video/BV19e4y1q7JJ)
 
 ## Branch
 

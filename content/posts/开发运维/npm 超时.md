@@ -1,9 +1,9 @@
 ---
 title: npm 超时
 date: 2024-06-11
-url: npm-timeout
 categories: ["开发运维"]
 tags: ["Node.js"]
+url: npm-timeout
 ---
 
 <!--more-->
