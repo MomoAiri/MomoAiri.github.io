@@ -4,6 +4,9 @@ date: 2024-09-16
 categories: ["开发运维"]
 tags: ["Git", "Gitlab", "GitHub"]
 url: airi-flow
+references: [
+	'[十分钟学会正确的github工作流，和开源作者们使用同一套流程](https://www.bilibili.com/video/BV19e4y1q7JJ)',
+]
 ---
 
 <!--more-->

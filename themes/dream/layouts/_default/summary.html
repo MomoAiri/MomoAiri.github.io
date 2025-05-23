@@ -30,19 +30,28 @@
   <div class="card-body">
     <h2 class="card-title">{{ .Title }}</h2>
 
-    <p class="date text-base-content/60">
-    {{ if site.Params.Experimental.jsDate }}
-      <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-    {{ else }}
-      {{ .Date | time.Format "Monday, Jan 2, 2006" }}
-    {{ end }}
-    </p>
+    {{ or .Description | emojify | safeHTML }}
 
-    {{ or .Description (.Summary | emojify | safeHTML) }}
+	<p class="date text-base-content/60">
+		{{ if site.Params.Experimental.jsDate }}
+		  <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+		{{ else }}
+		  {{ .Date | time.Format "Monday, Jan 2, 2006" }}
+		{{ end }}
+	</p>
 
-    {{ $hasAuthor := or .Params.author site.Params.author }}
-    <div class="card-actions justify-between items-center mt-4">
+	{{ if .Params.references }}
+	<details>
+		<!-- <summary class="card-reference-summary">查看参考文献</summary> -->
+		<div> 
+			<ul>
+				{{ range .Params.references }}
+				<li>{{ . | markdownify }}</li>
+				{{ end }}
+			</ul>
+		</div>
+	</details>
+	{{ end }}
 
-    </div>
   </div>
 </a>
