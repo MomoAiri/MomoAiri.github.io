@@ -1,0 +1,2 @@
+{{ $data := index .Site.Data.cards (.Get "source") }}
+{{ partial "components/cards" $data }}

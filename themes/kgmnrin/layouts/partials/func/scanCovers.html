@@ -1,0 +1,12 @@
+{{- $dir := . -}}
+{{- $files := slice -}}
+{{- range (readDir $dir) -}}
+    {{- $path := printf "%s/%s" $dir .Name -}}
+    {{- if .IsDir -}}
+        {{- $subFiles := partial "func/scanCovers" $path -}}
+        {{- $files = $files | append $subFiles -}}
+    {{- else -}}
+        {{- $files = $files | append (strings.TrimPrefix "static/" $path) -}}
+    {{- end -}}
+{{- end -}}
+{{- return $files -}}

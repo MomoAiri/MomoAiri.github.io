@@ -1,0 +1,32 @@
+<div class="card">
+	{{ if .url }}<a class="card-link" href="{{ .url }}">{{ end }}
+		{{ if .cover }}
+		<img class="card-image" src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+		{{ end }}
+		<div class="card-body">
+			{{ if .title }}<h3 class="card-title">{{ .title }}</h3>{{ end }}
+			{{ if .desc }}<p class="card-desc">{{ .desc | markdownify }}</p>{{ end }}
+			{{ if .desc2 }}<p class="card-desc2">{{ .desc2 | markdownify }}</p>{{ end }}
+
+		</div>
+		{{ if .url }}
+	</a>{{ end }}
+	{{ if .detail }}
+	<div class="card-detail">
+		<input type="checkbox" id="card-detail-toggle-{{ .File.UniqueID }}" class="toggle-input">
+		<label for="card-detail-toggle-{{ .File.UniqueID }}" class="toggle-label">
+			<svg class="show-icon" focusable="false" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+				data-testid="ExpandLessIcon">
+				<path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+			</svg>
+			<svg class="hide-icon" focusable="false" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
+				data-testid="ExpandLessIcon">
+				<path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+			</svg>
+		</label>
+		<div class="card-detail-content">
+			{{ .detail | markdownify }}
+		</div>
+	</div>
+	{{ end }}
+</div>

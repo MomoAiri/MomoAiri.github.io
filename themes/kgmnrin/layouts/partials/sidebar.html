@@ -1,0 +1,30 @@
+<nav id="sidebar" class="sidebar">
+	<div class="sidebar-content">
+		<ul class="sidebar-menu">
+			<li><a href="/">首页</a></li>
+			<li><a href="/posts">所有文章</a></li>
+			<li><a href="/about">关于</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+<script>
+	const menuToggle = document.getElementById('sidebar-toggle');
+	const sidebar = document.getElementById('sidebar');
+	const overlay = document.getElementById('sidebar-overlay');
+
+	menuToggle.addEventListener('click', () => {
+		sidebar.classList.toggle('active');
+		overlay.classList.toggle('active');
+		document.body.classList.toggle('no-scroll');
+	});
+
+	overlay.addEventListener('click', () => {
+		sidebar.classList.remove('active');
+		overlay.classList.remove('active');
+		document.body.classList.remove('no-scroll');
+	});
+</script>
+  

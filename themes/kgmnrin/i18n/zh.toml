@@ -1,0 +1,11 @@
+[daysAgo]
+other = "{{.Count}}天前"
+
+[wordCount]
+other = "{{.Count}}字"
+
+[dateFormat]
+other = "2006年01月02日"
+
+[dateFormatWithoutYear]
+other = "01月02日"

@@ -1,0 +1,13 @@
+{{- $main := resources.Get "css/main.css" -}}
+{{- $header := resources.Get "css/header.css" -}}
+{{- $sidebar := resources.Get "css/sidebar.css" -}}
+{{- $postcard := resources.Get "css/postcard.css" -}}
+{{- $cards := resources.Get "css/components/cards.css" -}}
+{{- $css := slice $main $header $sidebar $postcard $cards | resources.Concat "css/bundle.css" -}}
+
+{{- if hugo.IsDevelopment }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{- else }}
+  {{- $css := $css | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{- end }}

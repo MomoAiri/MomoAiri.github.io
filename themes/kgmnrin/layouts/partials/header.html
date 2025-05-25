@@ -1,0 +1,15 @@
+<header class="site-header">
+	<div class="header-left">
+		<button id="sidebar-toggle" class="menu-button" aria-label="Toggle menu">
+			<img src="/images/svg/menu-icon.svg" alt="Menu" width="24" height="24">
+		</button>
+		<h1 href="{{ .Site.BaseURL }}">{{ .Site.Title }}</h1>
+	</div>
+
+	<div class="header-right">
+		<a href="/categories">所有分类</a>
+		<a href="/tags">所有标签</a>
+	</div>
+</header>
+
+{{ partial "sidebar.html" . }}
