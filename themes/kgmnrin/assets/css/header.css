@@ -82,7 +82,7 @@
   }
   
   /* 菜单按钮样式 */
-  .menu-toggle {
+  .header-menu {
     order: 2;
     display: block !important;
     background: none;

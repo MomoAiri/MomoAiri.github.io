@@ -44,7 +44,7 @@ header 支持标题组件、搜索组件、导航组件、集合式导航组件�
   text: 文章
 ```
 
-编写 markdown 文章时，通过在文章开头的 yml 字段中指定 `custom-header: xxx` 来引用。
+编写 markdown 文章时，通过在文章开头的 yml 字段中指定 `customHeader: xxx` 来引用。
 
 类似于
 

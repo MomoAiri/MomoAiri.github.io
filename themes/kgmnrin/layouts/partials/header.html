@@ -2,8 +2,8 @@
 	<div class="header-container">
 		{{/* 获取header配置 */}}
 		{{ $headerConfig := "default" }}
-		{{ if isset .Params "customheader" }}
-			{{ $headerConfig = .Params.customheader }}
+		{{ if isset .Params "customHeader" }}
+			{{ $headerConfig = .Params.customHeader }}
 		{{ end }}
 		
 		{{ $headerPath := printf "static/headers/%s.yml" $headerConfig }}
