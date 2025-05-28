@@ -12,24 +12,34 @@
 			
 			{{/* 遍历配置中的元素并渲染 */}}
 			{{ range $elements }}
-				{{ if eq .type "title" }}
-					<div class="header-title">
-						<h1>{{ .text }}</h1>
+				{{ if eq .type "logo" }}
+					<div class="header-logo">
+						<a href="{{ .url }}">
+							{{ if .icon }}
+								<img src="{{ .icon }}" alt="Logo" class="logo-image">
+							{{ end }}
+							{{ if .text }}
+								<span class="logo-text">{{ .text }}</span>
+							{{ end }}
+						</a>
 					</div>
 				{{ else if eq .type "search" }}
 					<div class="header-search">
 						<input type="text" placeholder="{{ .placeholder }}">
-						<button>{{ .buttonText }}</button>
 					</div>
 				{{ else if eq .type "link" }}
 					<div class="header-link">
-						<a href="{{ .url }}">{{ .text }}</a>
+						<a href="{{ .url }}">
+							{{ if .svg }}
+								<span class="link-icon">{{ .svg | safeHTML }}</span>
+							{{ end }}
+							<span class="link-text">{{ .text }}</span>
+						</a>
 					</div>
 				{{ end }}
 			{{ end }}
 		{{ else }}
-			{{/* 默认header */}}
-			<div class="header-title">
+			<div class="header-logo">
 				<h1>{{ .Site.Title }}</h1>
 			</div>
 		{{ end }}

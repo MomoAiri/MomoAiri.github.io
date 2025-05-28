@@ -1,10 +1,19 @@
-- type: title
-  text: "MomoAiri"
-  
+- type: logo
+  # icon: /images/logo.png
+  url: /
+  text: 首页
+
 - type: search
-  placeholder: "搜索..."
-  buttonText: "搜索"
+  placeholder: XXX
   
 - type: link
   url: /posts/
-  text: "文章"
+  text: 文章
+
+- type: link
+  url: /categories/
+  text: 分类
+
+- type: link
+  url: /tags/
+  text: 标签

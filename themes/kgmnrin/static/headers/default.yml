@@ -1,9 +1,9 @@
 - type: title
-  text: "MomoAiri"
+  text: XXX
   
 - type: search
-  placeholder: "搜索..."
-  buttonText: "搜索"
+  placeholder: XXX
+  buttonText: XXX
   
 - type: link
   url: /posts/

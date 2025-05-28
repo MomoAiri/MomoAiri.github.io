@@ -31,25 +31,17 @@ cover: /cover/プロジェクトセカイ カラフルステージ！ feat. 初�
 header 支持标题组件、搜索组件、导航组件、集合式导航组件，配置格式如下：
 
 ```yaml
-title_enable: true
-title: 标题
-title_link: 链接
-title_icon: 图标
-search_enable: true
-search_placeholder: 搜索
-search_icon: 图标
-nav_list:
-  - type: 0 # 普通导航
-	name: 名称
-	link: 链接
-	icon: 图标
-  - type: 1	# 集合式导航
-	name: 名称
-	list:
-	  - name: 名称
-		link: 链接
-	  - name: 名称
-		link: 链接
+- type: logo
+  icon: /images/logo.png
+  url: /
+
+- type: search
+  placeholder: XXX
+  
+- type: link
+  url: /posts/
+  svg: ""
+  text: 文章
 ```
 
 编写 markdown 文章时，通过在文章开头的 yml 字段中指定 `custom-header: xxx` 来引用。

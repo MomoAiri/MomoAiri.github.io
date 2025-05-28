@@ -23,7 +23,7 @@
 }
 
 /* PC端布局 - 所有元素横向排列 */
-.header-title,
+.header-logo,
 .header-search,
 .header-link {
   display: flex;
