@@ -1,0 +1,10 @@
+- type: title
+  text: "MomoAiri"
+  
+- type: search
+  placeholder: "搜索..."
+  buttonText: "搜索"
+  
+- type: link
+  url: /posts/
+  text: "文章"

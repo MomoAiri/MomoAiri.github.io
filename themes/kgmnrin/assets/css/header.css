@@ -1,48 +1,119 @@
+/* 基础header样式 */
 .site-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 64px;
-	background-color: white;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-	z-index: 50;
-	display: flex;
-	align-items: center;
-	padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
-.header-left {
-	display: flex;
-	align-items: center;
-	flex-grow: 1;
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.menu-button {
-	margin-right: 16px;
-	padding: 8px;
-	border-radius: 6px;
+/* PC端布局 - 所有元素横向排列 */
+.header-title,
+.header-search,
+.header-link {
+  display: flex;
+  align-items: center;
 }
 
-.menu-button:hover {
-	background-color: #f3f4f6;
+.header-title h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  white-space: nowrap;
 }
 
-.menu-icon {
-	width: 24px;
-	height: 24px;
+.header-search input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 8px;
 }
 
-.site-title {
-	font-size: 1.25rem;
-	font-weight: bold;
+.header-search button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.header-right {
-	display: flex;
-	gap: 16px;
+.header-link a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  white-space: nowrap;
 }
 
-.header-link:hover {
-	color: #2563eb;
+.header-link a:hover {
+  color: #007bff;
+}
+
+/* 移动端布局 */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    padding: 0 15px;
+  }
+  
+  /* 标题和搜索框保持显示 */
+  .header-title,
+  .header-search {
+    order: 1;
+  }
+  
+  /* 其他链接隐藏，准备放入菜单 */
+  .header-link {
+    display: none;
+  }
+  
+  /* 菜单按钮样式 */
+  .menu-toggle {
+    order: 2;
+    display: block !important;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+  }
+  
+  /* 菜单展开时的样式 */
+  .header-container.menu-open {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  
+  .header-container.menu-open .header-link {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+  }
+  
+  .header-container.menu-open .header-title,
+  .header-container.menu-open .header-search {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* 默认隐藏菜单按钮（PC端） */
+.header-menu {
+  display: none;
 }

@@ -1,15 +1,40 @@
 <header class="site-header">
-	<div class="header-left">
-		<button id="sidebar-toggle" class="menu-button" aria-label="Toggle menu">
+	<div class="header-container">
+		{{/* 获取header配置 */}}
+		{{ $headerConfig := "default" }}
+		{{ if isset .Params "customheader" }}
+			{{ $headerConfig = .Params.customheader }}
+		{{ end }}
+		
+		{{ $headerPath := printf "static/headers/%s.yml" $headerConfig }}
+		{{ if fileExists $headerPath }}
+			{{ $elements := readFile $headerPath | transform.Unmarshal }}
+			
+			{{/* 遍历配置中的元素并渲染 */}}
+			{{ range $elements }}
+				{{ if eq .type "title" }}
+					<div class="header-title">
+						<h1>{{ .text }}</h1>
+					</div>
+				{{ else if eq .type "search" }}
+					<div class="header-search">
+						<input type="text" placeholder="{{ .placeholder }}">
+						<button>{{ .buttonText }}</button>
+					</div>
+				{{ else if eq .type "link" }}
+					<div class="header-link">
+						<a href="{{ .url }}">{{ .text }}</a>
+					</div>
+				{{ end }}
+			{{ end }}
+		{{ else }}
+			{{/* 默认header */}}
+			<div class="header-title">
+				<h1>{{ .Site.Title }}</h1>
+			</div>
+		{{ end }}
+		<button class="header-menu">
 			<img src="/images/svg/menu-icon.svg" alt="Menu" width="24" height="24">
 		</button>
-		<h1 href="{{ .Site.BaseURL }}">{{ .Site.Title }}</h1>
-	</div>
-
-	<div class="header-right">
-		<a href="/categories">所有分类</a>
-		<a href="/tags">所有标签</a>
 	</div>
 </header>
-
-{{ partial "sidebar.html" . }}
