@@ -1,34 +1,15 @@
 <!DOCTYPE html>
 <html lang = "{{ site.Language.LanguageCode }}" dir = "{{ or site.Language.LanguageDirection `ltr` }}">
-
-{{ partial "head.html" . }}
-
-<body>
-	{{ if or (.Params.custom_header) (.Scratch.Get "custom_header") }}
-		{{ with .Params.custom_header }}
-			{{ partial . }}
-		{{ else }}
-			{{ with .Scratch.Get "custom_header" }}
-				{{ partial . }}
-			{{ end }}
-		{{ end }}
-	{{ else }}
+	{{ partial "head.html" . }}
+	<body>
 		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
-	{{ end }}
 
-	<main>{{ block "main" . }}{{ end }}</main>
+		{{ block "sidebarLeft" . }}{{ partial "sidebarLeft.html" . }}{{ end }}
 
-	{{ if or (.Params.custom_footer) (.Scratch.Get "custom_footer") }}
-		{{ with .Params.custom_footer }}
-			{{ partial . }}
-		{{ else }}
-			{{ with .Scratch.Get "custom_footer" }}
-				{{ partial . }}
-			{{ end }}
-		{{ end }}
-	{{ else }}
+		<main>{{ block "main" . }}{{ end }}</main>
+
+		{{ block "sidebarRight" . }}{{ partial "sidebarRight.html" . }}{{ end }}
+
 		{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
-	{{ end }}
-</body>
-
+	</body>
 </html>

@@ -1,0 +1,18 @@
+logo:
+  icon: /logo.svg
+  enable: true
+  url: /
+search:
+  enable: true
+  placeholder: XXX
+items:
+  - position: left
+    url: /posts/
+    svg: ""
+    text: 文章
+  - position: right
+    url: /categories/
+    text: 分类
+  - position: right
+    url: /tags/
+    text: 标签

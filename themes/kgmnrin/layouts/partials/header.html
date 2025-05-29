@@ -1,50 +1,69 @@
 <header class="site-header">
 	<div class="header-container">
-		{{/* 获取header配置 */}}
-		{{ $headerConfig := "default" }}
-		{{ if isset .Params "customHeader" }}
-			{{ $headerConfig = .Params.customHeader }}
-		{{ end }}
-		
-		{{ $headerPath := printf "static/headers/%s.yml" $headerConfig }}
-		{{ if fileExists $headerPath }}
-			{{ $elements := readFile $headerPath | transform.Unmarshal }}
-			
-			{{/* 遍历配置中的元素并渲染 */}}
-			{{ range $elements }}
-				{{ if eq .type "logo" }}
-					<div class="header-logo">
-						<a href="{{ .url }}">
-							{{ if .icon }}
-								<img src="{{ .icon }}" alt="Logo" class="logo-image">
-							{{ end }}
-							{{ if .text }}
-								<span class="logo-text">{{ .text }}</span>
-							{{ end }}
-						</a>
-					</div>
-				{{ else if eq .type "search" }}
-					<div class="header-search">
-						<input type="text" placeholder="{{ .placeholder }}">
-					</div>
-				{{ else if eq .type "link" }}
-					<div class="header-link">
-						<a href="{{ .url }}">
-							{{ if .svg }}
-								<span class="link-icon">{{ .svg | safeHTML }}</span>
-							{{ end }}
-							<span class="link-text">{{ .text }}</span>
-						</a>
-					</div>
-				{{ end }}
+	  {{/* 获取header配置 */}}
+	  {{ $headerConfig := "default" }}
+	  {{ if isset .Params "customHeader" }}
+		{{ $headerConfig = .Params.customHeader }}
+	  {{ end }}
+  
+	  {{ $headerPath := printf "static/custom-headers/%s.yml" $headerConfig }}
+	  {{ if fileExists $headerPath }}
+		{{ $config := readFile $headerPath | transform.Unmarshal }}
+  
+		<div class="header-content">
+		  {{/* Logo部分 */}}
+		  {{ if $config.logo.enable }}
+		  <div class="header-logo">
+			<a href="{{ $config.logo.url | default "/" }}">
+			  {{ if $config.logo.icon }}
+				<img src="{{ $config.logo.icon }}" alt="Logo" class="logo-icon">
+			  {{ end }}
+			</a>
+		  </div>
+		  {{ end }}
+  
+		  {{/* 移动端菜单按钮 */}}
+		  <button class="mobile-menu-button">
+			<img src="/svg/menu-icon.svg" alt="Menu" width="24" height="24">
+		  </button>
+  
+		  {{/* 导航项 - 左侧 */}}
+		  <div class="header-items left-items">
+			{{ range $item := $config.items }}
+			  {{ if eq $item.position "left" }}
+				<a href="{{ $item.url }}" class="header-item">
+				  {{ if $item.svg }}
+					<span class="item-icon">{{ safeHTML $item.svg }}</span>
+				  {{ end }}
+				  <span class="item-text">{{ $item.text }}</span>
+				</a>
+			  {{ end }}
 			{{ end }}
-		{{ else }}
-			<div class="header-logo">
-				<h1>{{ .Site.Title }}</h1>
-			</div>
-		{{ end }}
-		<button class="header-menu">
-			<img src="/images/svg/menu-icon.svg" alt="Menu" width="24" height="24">
-		</button>
+		  </div>
+  
+		  {{/* 搜索框 */}}
+		  {{ if $config.search.enable }}
+		  <div class="header-search">
+			<input type="text" placeholder="{{ $config.search.placeholder | default "搜索..." }}" class="search-input">
+		  </div>
+		  {{ end }}
+  
+		  {{/* 导航项 - 右侧 */}}
+		  <div class="header-items right-items">
+			{{ range $item := $config.items }}
+			  {{ if eq $item.position "right" }}
+				<a href="{{ $item.url }}" class="header-item">
+				  {{ if $item.svg }}
+					<span class="item-icon">{{ safeHTML $item.svg }}</span>
+				  {{ end }}
+				  <span class="item-text">{{ $item.text }}</span>
+				</a>
+			  {{ end }}
+			{{ end }}
+		  </div>
+		</div>
+	  {{ else }}
+		<p>Header config file not found: {{ $headerPath }}</p>
+	  {{ end }}
 	</div>
-</header>
+  </header>

@@ -1,119 +1,156 @@
-/* 基础header样式 */
+/* 基础样式 */
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-}
-
-.header-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* PC端布局 - 所有元素横向排列 */
-.header-logo,
-.header-search,
-.header-link {
-  display: flex;
-  align-items: center;
-}
-
-.header-title h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  white-space: nowrap;
-}
-
-.header-search input {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-right: 8px;
-}
-
-.header-search button {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.header-link a {
-  color: #333;
-  text-decoration: none;
-  padding: 8px 12px;
-  white-space: nowrap;
-}
-
-.header-link a:hover {
-  color: #007bff;
-}
-
-/* 移动端布局 */
-@media (max-width: 768px) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 64px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+  }
+  
   .header-container {
-    flex-wrap: wrap;
-    padding: 0 15px;
+	max-width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
   }
   
-  /* 标题和搜索框保持显示 */
-  .header-title,
+  .header-content {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  
+  /* Logo 样式 */
+  .header-logo {
+	margin-right: 20px;
+  }
+  
+  .logo-icon {
+	height: 40px;
+	width: auto;
+  }
+  
+  /* 导航项样式 */
+  .header-items {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+  }
+  
+  .left-items {
+	margin-right: auto;
+  }
+  
+  .right-items {
+	margin-left: auto;
+  }
+  
+  .header-item {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: #333;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 8px 12px;
+	border-radius: 4px;
+	transition: background-color 0.3s;
+  }
+  
+  .header-item:hover {
+	background-color: #f5f5f5;
+  }
+  
+  .item-icon {
+	display: inline-flex;
+	align-items: center;
+  }
+  
+  /* 搜索框样式 */
   .header-search {
-    order: 1;
+	flex: 0 1 400px;
+	margin: 0 20px;
   }
   
-  /* 其他链接隐藏，准备放入菜单 */
-  .header-link {
-    display: none;
+  .search-input {
+	width: 100%;
+	padding: 8px 15px;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	font-size: 14px;
+	outline: none;
+	transition: border-color 0.3s;
   }
   
-  /* 菜单按钮样式 */
-  .header-menu {
-    order: 2;
-    display: block !important;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: auto;
+  .search-input:focus {
+	border-color: #999;
   }
   
-  /* 菜单展开时的样式 */
-  .header-container.menu-open {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
+  /* 移动端菜单按钮 */
+  .mobile-menu-button {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	margin-left: auto;
   }
   
-  .header-container.menu-open .header-link {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    border-top: 1px solid #eee;
+  .mobile-menu-button img {
+	width: 24px;
+	height: 24px;
   }
   
-  .header-container.menu-open .header-title,
-  .header-container.menu-open .header-search {
-    width: 100%;
-    margin-bottom: 10px;
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+	.header-items {
+	  display: none;
+	  position: absolute;
+	  top: 64px;
+	  left: 0;
+	  right: 0;
+	  background-color: #ffffff;
+	  flex-direction: column;
+	  padding: 10px 0;
+	  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+	
+	.header-items.active {
+	  display: flex;
+	}
+	
+	.left-items, .right-items {
+	  margin: 0;
+	  width: 100%;
+	}
+	
+	.header-item {
+	  width: 100%;
+	  padding: 12px 20px;
+	  justify-content: center;
+	}
+	
+	.header-search {
+	  display: none;
+	}
+	
+	.mobile-menu-button {
+	  display: block;
+	}
+	
+	.header-logo {
+	  margin-right: 0;
+	}
   }
-}
-
-/* 默认隐藏菜单按钮（PC端） */
-.header-menu {
-  display: none;
-}
+  
+  @media (max-width: 480px) {
+	.header-container {
+	  padding: 0 10px;
+	}
+  }
