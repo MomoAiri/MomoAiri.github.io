@@ -10,7 +10,7 @@ cover: /cover/プロジェクトセカイ カラフルステージ！ feat. 初�
 
 # Hugo 主题开发：kgnmrin
 
-找不到特别合眼的主题，所以自己做了个。核心就是使用组件为各个页面的部分进行自定义内容，这样一来主题就不用去提供关于页面、友链页面、文档专题的具体功能了，通过自定义就能组合出来相应的效果。
+找不到特别合眼的主题，所以自己做了个。核心就是使用组件为各个页面的部分进行自定义内容。这样一来主题就不用去提供关于页面、友链页面、文档专题的具体功能了，通过自定义就能组合出来相应的效果。
 
 ## 准备
 
@@ -53,7 +53,7 @@ cover: /cover/プロジェクトセカイ カラフルステージ！ feat. 初�
 
 ### header
 
-header 的布局为固定在顶部保持 64px，logo 启用后固定显示在左边，search 居中，item 可以选择从 logo 右边开始从左到右排，或者 right 控制从最右边向左排，宽度基本固定、但会受是否填了icon影响。手机端 items 不会显示在顶部，使用static/svg/menu.svg这个资源显示在右边，点击后才会展开定义的items（如果有items的话）
+header 的布局参考自 b 站，固定在顶部保持 64px，logo 显示在左边，search 居中，item 宽度 50 px，有 svg 和文字时两者上下排列，只有 svg或文字时上下居中。手机端 items 收纳在菜单按钮。
 
 配置在 `/static/custom-headers/xxx.yml` 中。
 
@@ -68,87 +68,16 @@ search:
   enable: true
   placeholder: XXX
 items:
-  - left
-    url: /posts/
+  - url: /posts/
     svg: ""
     text: 文章
-  - right
-    url: /categories/
+  - url: /categories/
     text: 分类
-  - right
-    url: /tags/
+  - url: /tags/
     text: 标签
 ```
 
 编写 markdown 文章时，通过在文章开头的 yml 字段中指定 `customHeader: xxx` 来引用，没有时默认用 `/static/custom-headers/default.yml`。
-
-```
-<header class="site-header">
-	<div class="header-container">
-		{{/* 获取header配置 */}}
-		{{ $headerConfig := "default" }}
-		{{ if isset .Params "customHeader" }}
-		{{ $headerConfig = .Params.customHeader }}
-		{{ end }}
-
-		{{ $headerPath := printf "static/custom-headers/%s.yml" $headerConfig }}
-		{{ if fileExists $headerPath }}
-		{{ $config := readFile $headerPath | transform.Unmarshal }}
-
-		<div class="header-content">
-			{{/* Logo部分 */}}
-			{{ if $config.logo.enable }}
-			<div class="header-logo">
-				<a href="{{ $config.logo.url | default " /" }}">
-					{{ if $config.logo.icon }}
-					<img src="{{ $config.logo.icon }}" alt="Logo" class="logo-icon">
-					{{ end }}
-				</a>
-			</div>
-			{{ end }}
-
-			{{/* 导航项 - 左侧 */}}
-			<div class="header-items left-items">
-				{{ range $item := $config.items }}
-				{{ if eq $item.position "left" }}
-				<a href="{{ $item.url }}" class="header-item">
-					{{ if $item.svg }}
-					<span class="item-icon">{{ safeHTML $item.svg }}</span>
-					{{ end }}
-					<span class="item-text">{{ $item.text }}</span>
-				</a>
-				{{ end }}
-				{{ end }}
-			</div>
-
-			{{/* 搜索框 */}}
-			{{ if $config.search.enable }}
-			<div class="header-search">
-				<input type="text" placeholder="{{ $config.search.placeholder | default " 搜索..." }}"
-					class="search-input">
-			</div>
-			{{ end }}
-
-			{{/* 导航项 - 右侧 */}}
-			<div class="header-items right-items">
-				{{ range $item := $config.items }}
-				{{ if eq $item.position "right" }}
-				<a href="{{ $item.url }}" class="header-item">
-					{{ if $item.svg }}
-					<span class="item-icon">{{ safeHTML $item.svg }}</span>
-					{{ end }}
-					<span class="item-text">{{ $item.text }}</span>
-				</a>
-				{{ end }}
-				{{ end }}
-			</div>
-		</div>
-		{{ else }}
-		<p>Header config file not found: {{ $headerPath }}</p>
-		{{ end }}
-	</div>
-</header>
-```
 
 ## index
 
