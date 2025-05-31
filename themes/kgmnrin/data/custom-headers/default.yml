@@ -1,6 +1,6 @@
 logo:
-  icon: /logo.svg
   enable: true
+  icon: /logo.svg
   url: /
 search:
   enable: true

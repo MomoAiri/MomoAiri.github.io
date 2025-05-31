@@ -1,0 +1,27 @@
+{{ $componentName := .Get "name" }}
+{{ $data := index .Site.Data.components $componentName }}
+
+<div class="card-list">
+  {{ range $data }}
+    {{ partial "components/card" (dict
+      "video" .video
+      "icon" .icon
+      "title" .title
+      "downloads" .downloads
+      "tags" .tags
+      "description" .description
+      "update" .update
+      "screenshots" .screenshots
+    ) }}
+  {{ end }}
+</div>
+
+<style>
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</style>

@@ -1,24 +1,29 @@
 {{ define "main" }}
-  <h1>所有分类</h1>
-  <ul style="
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  ">
-    {{ range .Data.Terms.Alphabetical }}
-      <li>
-        <a href="{{ .Page.RelPermalink }}" style="
-          display: inline-block;
-          padding: 8px 16px;
-          background: #f0f0f0;
-          border-radius: 20px;
-          text-decoration: none;
-        ">
-          {{ .Page.Title }} ({{ .Count }})
-        </a>
-      </li>
-    {{ end }}
-  </ul>
+<div class="main-layout">
+	<div class="sidebar-left">
+		<ul style="
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	">
+	</ul>
+			{{ range .Data.Terms.Alphabetical }}
+			<li>
+				<a href="{{ .Page.RelPermalink }}" style="
+			display: inline-block;
+			padding: 8px 16px;
+			background: #f0f0f0;
+			border-radius: 20px;
+			text-decoration: none;
+			">
+					{{ .Page.Title }} ({{ .Count }})
+				</a>
+			</li>
+			{{ end }}
+		</ul>
+	</div>
+</div>
+	
 {{ end }}

@@ -1,27 +1,88 @@
-.main {
-	margin-top: 64px;
-	width: 1080px;
-	margin-left: auto;
-	margin-right: auto;
+.main-container {
+	width: clamp(300px, 100%, 1440px);
+	margin: 0 auto;
+	padding: 0 max(20px, calc((100% - 1440px) / 2));
+  }
+
+.layout-wrapper {
+	display: flex;
+	min-height: 100vh;
 }
 
-body {
-	color: #222;
-	font-family: sans-serif;
-	line-height: 1.5;
-	margin: 1rem;
-	max-width: 1080px;
-	padding-top: 64px;
-	margin-left: auto;
-	margin-right: auto;
+.content-container {
+	flex: 1;
+	max-width: 720px;
+	margin: 0 auto;
 }
 
-footer {
-	border-top: 1px solid #222;
-	margin-top: 1rem;
+.sidebar-left,
+.sidebar-right {
+	width: 360px;
+	flex-shrink: 0;
+	transition: transform 0.3s ease;
+	position: sticky;
+	top: 20px; /* 根据需要调整 */
+  align-self: flex-start; /* 顶部对齐 */
+  height: fit-content;
 }
 
-a {
-	color: #00e;
-	text-decoration: none;
+.sidebar-toggle {
+	display: none;
+	position: fixed;
+	top: 20px;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.7);
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.left-toggle {
+	left: 10px;
+}
+
+.right-toggle {
+	right: 10px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1440px) {
+
+	.sidebarLeft,
+	.sidebarRight {
+		width: 300px;
+	}
+}
+
+@media (max-width: 1024px) {
+
+	.sidebarLeft,
+	.sidebarRight {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		z-index: 90;
+		background: white;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		transform: translateX(-100%);
+	}
+
+	.sidebarRight {
+		transform: translateX(100%);
+		right: 0;
+	}
+
+	.sidebar-toggle {
+		display: block;
+	}
+
+	.sidebarLeft.active {
+		transform: translateX(0);
+	}
+
+	.sidebarRight.active {
+		transform: translateX(0);
+	}
 }

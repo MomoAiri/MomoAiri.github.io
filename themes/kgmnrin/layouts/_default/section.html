@@ -1,29 +1,3 @@
 {{ define "main" }}
-{{- $scanCovers := partial "func/scanCovers" "static/cover" -}}
-<section class="post-list">
-    <div class="cards">
-        {{ range .Pages }}
-        {{ $cover := .Params.cover }}
-        {{ if not $cover }}
-            {{ $randomImage := index (shuffle $scanCovers) 0 }}
-            {{ $cover = printf "/%s" $randomImage }}
-        {{ end }}
-        {{ $daysAgo := div (now.Sub .Date).Hours 24 }}
-        {{ $timeInfo := cond (lt $daysAgo 30) 
-            (i18n "daysAgo" (dict "Count" (int (math.Round $daysAgo)))) 
-            (cond (eq .Date.Year now.Year) 
-                (.Date.Format (i18n "dateFormatWithoutYear")) 
-                (.Date.Format (i18n "dateFormat")))
-        }}
-        {{ $wordInfo := i18n "wordCount" (dict "Count" (.Content | countwords)) }}
-        {{ partial "components/card" (dict
-            "title" .Title
-            "desc" .Description
-            "desc2" (print $timeInfo "，" $wordInfo)
-            "url" .RelPermalink
-            "cover" $cover
-        ) }}
-        {{ end }}
-    </div>
-</section>
+{{ partial "components/postsGrids" . }}
 {{ end }}

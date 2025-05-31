@@ -5,14 +5,13 @@
 			{{ $headerConfig = .Params.customHeader }}
 		{{ end }}
 
-		{{ $headerPath := printf "static/custom-headers/%s.yml" $headerConfig }}
-		{{ if fileExists $headerPath }}
-			{{ $config := readFile $headerPath | transform.Unmarshal }}
+		{{ $config := index .Site.Data "custom-headers" $headerConfig }}
 
+		{{ if $config }}
 			<div class="header-content">
 				{{ if $config.logo.enable }}
 					<div class="header-logo">
-						<a href="{{ $config.logo.url | default " /" }}">
+						<a href="{{ $config.logo.url | default "/" }}">
 							{{ if $config.logo.icon }}
 								<img src="{{ $config.logo.icon }}" alt="Logo" class="logo-icon">
 							{{ end }}
@@ -26,7 +25,7 @@
 
 				{{ if $config.search.enable }}
 					<div class="header-search">
-						<input type="text" placeholder="{{ $config.search.placeholder | default " 搜索..." }}"
+						<input type="text" placeholder="{{ $config.search.placeholder | default "搜索..." }}"
 							class="search-input">
 					</div>
 				{{ end }}
@@ -43,7 +42,7 @@
 				</div>
 			</div>
 		{{ else }}
-			<p>Header config file not found: {{ $headerPath }}</p>
+			<p>Header config not found: {{ $headerConfig }}</p>
 		{{ end }}
 	</div>
 </header>

@@ -1,13 +1,18 @@
 .site-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 64px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
+    position: relative;
+    height: 64px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: #18191c1f;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 .header-container {
 	height: 100%;

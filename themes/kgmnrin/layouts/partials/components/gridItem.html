@@ -1,0 +1,16 @@
+<article class="grid-item">
+	<a class="grid-item-link" href="{{ .url }}" aria-label="{{ .title }}">
+		<div class="cover-container">
+			{{ if .cover }}
+			<img class="grid-item-image" src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+			{{ end }}
+		</div>
+		<div class="grid-item-body">
+			<h3 class="grid-item-title">{{ .title }}</h3>
+			{{ if .desc }}<p class="grid-item-desc">{{ .desc }}</p>{{ end }}
+			<div class="grid-item-meta">
+				<span class="grid-item-desc2">{{ .desc2 }}</span>
+			</div>
+		</div>
+	</a>
+</article>

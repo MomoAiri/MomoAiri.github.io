@@ -2,8 +2,15 @@
 {{- $header := resources.Get "css/header.css" -}}
 {{- $sidebar := resources.Get "css/sidebar.css" -}}
 {{- $postcard := resources.Get "css/postcard.css" -}}
-{{- $cards := resources.Get "css/components/cards.css" -}}
-{{- $css := slice $main $header $sidebar $postcard $cards | resources.Concat "css/bundle.css" -}}
+{{- $cardlist := resources.Get "css/components/card-list.css" -}}
+{{- $gridcontainer := resources.Get "css/components/grid-container.css" -}}
+{{- $css := slice 
+	$main 
+	$header 
+	$sidebar 
+	$cardlist 
+	$gridcontainer
+	| resources.Concat "css/bundle.css" -}}
 
 {{- if hugo.IsDevelopment }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">

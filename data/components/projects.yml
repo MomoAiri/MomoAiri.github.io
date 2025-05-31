@@ -1,0 +1,21 @@
+- video:
+    url: "/videos/game1.mp4"
+    poster: "/images/game1-poster.jpg"
+  icon: "/icons/game1.png"
+  title: "XXX"
+  downloads:
+    - platform: "ios"
+      url: "#"
+      icon: "/icons/apple.svg"
+      text: "App Store"
+    - platform: "android"
+      url: "#"
+      icon: "/icons/android.svg"
+      text: "Google Play"
+  tags: ["冒险", "角色扮演", "开放世界"]
+  description: "XXXXXX..."
+  update: "v2.1.0 XXX"
+  screenshots:
+    - "/screenshots/game1-1.jpg"
+    - "/screenshots/game1-2.jpg"
+    - "/screenshots/game1-3.jpg"

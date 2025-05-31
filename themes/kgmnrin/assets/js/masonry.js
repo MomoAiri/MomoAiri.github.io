@@ -1,12 +1,12 @@
 "use strict";
 
 function initGrid() {
-  document.querySelectorAll('.cards').forEach(function (grid) {
+  document.querySelectorAll('.grid-container').forEach(function (grid) {
     var msnry = new Masonry(grid, {
-      itemSelector: '.card',
+      itemSelector: '.grid-item',
     });
     
-    if (grid.classList.contains('card-detail-content')) {
+    if (grid.classList.contains('grid-item-hide')) {
       window.aboutMasonry = msnry;
     }
     
@@ -15,11 +15,11 @@ function initGrid() {
       msnry.layout();
     });
     
-    grid.querySelectorAll('.toggle-input').forEach(function(toggle) {
+    grid.querySelectorAll('.toggle-show').forEach(function(toggle) {
       toggle.addEventListener('change', function() {
         setTimeout(function() {
           msnry.layout();
-        }, 300);
+        }, 360);
       });
     });
   });

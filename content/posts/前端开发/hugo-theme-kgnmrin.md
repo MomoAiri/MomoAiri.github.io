@@ -1,9 +1,10 @@
 ---
 title: Hugo 主题开发：kgnmrin
 date: 2025-05-24
-categories: ["开发运维"]
+categories: ["前端开发"]
 tags: ["Hugo"]
-url: hugo-theme-kgnmrin
+url: 前端开发/hugo-theme-kgnmrin
+type: project
 description: 找不到特别合眼的主题，所以自己做了个。
 cover: /cover/プロジェクトセカイ カラフルステージ！ feat. 初音ミク/1174b.webp
 ---
@@ -33,6 +34,8 @@ cover: /cover/プロジェクトセカイ カラフルステージ！ feat. 初�
 
 ### baseof
 
+样式参考 [B 站游戏中心](https://game.bilibili.com/platform)。
+
 ``` html
 <!DOCTYPE html>
 <html>
@@ -40,11 +43,7 @@ cover: /cover/プロジェクトセカイ カラフルステージ！ feat. 初�
 	<body>
 		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 
-		{{ block "sidebarLeft" . }}{{ partial "sidebarLeft.html" . }}{{ end }}
-
 		<main>{{ block "main" . }}{{ end }}</main>
-
-		{{ block "sidebarRight" . }}{{ partial "sidebarRight.html" . }}{{ end }}
 
 		{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
 	</body>
@@ -53,16 +52,12 @@ cover: /cover/プロジェクトセカイ カラフルステージ！ feat. 初�
 
 ### header
 
-header 的布局参考自 b 站，固定在顶部保持 64px，logo 显示在左边，search 居中，item 宽度 50 px，有 svg 和文字时两者上下排列，只有 svg或文字时上下居中。手机端 items 收纳在菜单按钮。
+header 的自定义配置在 `/data/custom-headers/xxx.yml` ，配置格式如下：
 
-配置在 `/static/custom-headers/xxx.yml` 中。
-
-header 支持 logo组件、搜索组件、链接组件，配置格式如下：
-
-```yaml
+``` yaml
 logo:
-  icon: /logo.svg
   enable: true
+  icon: /logo.svg
   url: /
 search:
   enable: true
@@ -77,11 +72,29 @@ items:
     text: 标签
 ```
 
-编写 markdown 文章时，通过在文章开头的 yml 字段中指定 `customHeader: xxx` 来引用，没有时默认用 `/static/custom-headers/default.yml`。
+通过在文章开头的 yml 字段中指定 `customHeader: xxx` 来引用，没有时默认用 `/data/custom-headers/default.yml`，指定了路径但是没有则视为不使用 header。
+
+### sidebar
+
+sidebar 的自定义配置在 `/data/custom-sidebars/xxx.yml` ，支持显示目录组件、文章列表组件
+
+```yaml
+toc:
+  enable: true
+components:
+  - type: Indexs
+    data: wiki-xxx		# 索引到 /data/components/wiki-xxx 的数据，使用 partials/components/Indexs 显示
+```
+
+通过在文章开头的 yml 字段中指定 `customSidebarLeft: xxx` 来引用，没有时默认用 `/data/custom-sidebars/default-left.yml`。
+
+### footer
 
 ## index
 
-配置在 `/static/index.yml` 中。
+
+
+配置在 `/hugo.toml` 中。
 
 ## 需求
 

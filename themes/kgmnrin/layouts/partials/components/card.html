@@ -1,32 +1,152 @@
-<div class="card">
-	{{ if .url }}<a class="card-link" href="{{ .url }}">{{ end }}
-		{{ if .cover }}
-		<img class="card-image" src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+<!-- components/card.html -->
+<div class="card" style="height: 270px; width: 100%;">
+	<div class="card-container">
+	  <!-- 左侧视频区域 (固定480px) -->
+	  <div class="card-media">
+		{{ if .video }}
+		<video width="480" height="270" controls poster="{{ .video.poster }}">
+		  <source src="{{ .video.url }}" type="video/mp4">
+		</video>
+		{{ else }}
+		<div class="media-placeholder" style="width:480px; height:270px; background:#eee;"></div>
 		{{ end }}
-		<div class="card-body">
-			{{ if .title }}<h3 class="card-title">{{ .title }}</h3>{{ end }}
-			{{ if .desc }}<p class="card-desc">{{ .desc | markdownify }}</p>{{ end }}
-			{{ if .desc2 }}<p class="card-desc2">{{ .desc2 | markdownify }}</p>{{ end }}
-
+	  </div>
+  
+	  <!-- 右侧内容区域 -->
+	  <div class="card-content">
+		<!-- 第一行：标题和下载按钮 -->
+		<div class="card-header">
+		  <div class="card-title">
+			{{ if .icon }}<img src="{{ .icon }}" class="title-icon">{{ end }}
+			<h3>{{ .title }}</h3>
+		  </div>
+		  <div class="download-buttons">
+			{{ range .downloads }}
+			<a href="{{ .url }}" class="download-btn {{ .platform }}">
+			  <img src="{{ .icon }}" alt="{{ .platform }}">
+			  {{ .text }}
+			</a>
+			{{ end }}
+		  </div>
 		</div>
-		{{ if .url }}
-	</a>{{ end }}
-	{{ if .detail }}
-	<div class="card-detail">
-		<input type="checkbox" id="card-detail-toggle-{{ .File.UniqueID }}" class="toggle-input">
-		<label for="card-detail-toggle-{{ .File.UniqueID }}" class="toggle-label">
-			<svg class="show-icon" focusable="false" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
-				data-testid="ExpandLessIcon">
-				<path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-			</svg>
-			<svg class="hide-icon" focusable="false" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"
-				data-testid="ExpandLessIcon">
-				<path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
-			</svg>
-		</label>
-		<div class="card-detail-content">
-			{{ .detail | markdownify }}
+  
+		<!-- 标签行 -->
+		{{ if .tags }}
+		<div class="card-tags">
+		  {{ range .tags }}
+		  <span class="tag">{{ . }}</span>
+		  {{ end }}
 		</div>
+		{{ end }}
+  
+		<!-- 第二行：简介 -->
+		<div class="card-desc">{{ .description }}</div>
+  
+		<!-- 第三行：更新公告 -->
+		{{ if .update }}
+		<div class="card-update">
+		  <strong>更新公告：</strong>
+		  <span>{{ .update }}</span>
+		</div>
+		{{ end }}
+  
+		<!-- 截图展示区 -->
+		{{ if .screenshots }}
+		<div class="card-screenshots">
+		  {{ range first 5 .screenshots }}
+		  <img src="{{ . }}" class="screenshot" loading="lazy">
+		  {{ end }}
+		</div>
+		{{ end }}
+	  </div>
 	</div>
-	{{ end }}
-</div>
+  </div>
+  
+  <style>
+  .card {
+	border: 1px solid #e1e4e8;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 20px;
+  }
+  .card-container {
+	display: flex;
+	height: 100%;
+  }
+  .card-media {
+	flex: 0 0 480px;
+	background: #000;
+  }
+  .card-content {
+	flex: 1;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+  }
+  .card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
+  }
+  .card-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+  }
+  .title-icon {
+	width: 24px;
+	height: 24px;
+  }
+  .download-buttons {
+	display: flex;
+	gap: 8px;
+  }
+  .download-btn {
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+  }
+  .download-btn.ios { background: #007aff; color: white; }
+  .download-btn.android { background: #3ddc84; color: #333; }
+  .download-btn.pc { background: #f0f0f0; color: #333; }
+  .card-tags {
+	margin-bottom: 8px;
+  }
+  .tag {
+	display: inline-block;
+	padding: 2px 8px;
+	background: #f0f0f0;
+	border-radius: 4px;
+	font-size: 12px;
+	margin-right: 6px;
+  }
+  .card-desc {
+	flex: 1;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 8px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+  }
+  .card-update {
+	font-size: 12px;
+	color: #ff6b00;
+	margin-bottom: 8px;
+  }
+  .card-screenshots {
+	display: flex;
+	gap: 8px;
+	height: 60px;
+  }
+  .screenshot {
+	height: 100%;
+	border-radius: 4px;
+	border: 1px solid #eee;
+  }
+  </style>
