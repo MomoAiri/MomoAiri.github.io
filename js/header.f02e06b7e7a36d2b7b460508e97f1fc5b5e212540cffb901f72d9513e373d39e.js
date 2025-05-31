@@ -1,0 +1,1 @@
+(()=>{document.addEventListener("DOMContentLoaded",function(){let t=document.querySelector(".mobile-menu-button"),e=document.querySelector(".left-items"),n=document.querySelector(".right-items");t&&e&&n&&t.addEventListener("click",function(){e.classList.toggle("active"),n.classList.toggle("active")})});})();

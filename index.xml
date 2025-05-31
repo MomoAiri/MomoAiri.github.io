@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MomoAiri</title><link>https://momoairi.github.io/</link><description>Recent content on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 主题开发：kgnmrin</title><link>https://momoairi.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/hugo-theme-kgnmrin/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/hugo-theme-kgnmrin/</guid><description>&lt;h1 id="hugo-主题开发kgnmrin">Hugo 主题开发：kgnmrin&lt;/h1>
+&lt;p>找不到特别合眼的主题，所以自己做了个。核心就是使用组件为各个页面的部分进行自定义内容。这样一来主题就不用去提供关于页面、友链页面、文档专题的具体功能了，通过自定义就能组合出来相应的效果。&lt;/p>
+&lt;h2 id="准备">准备&lt;/h2>
+&lt;h3 id="环境">环境&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/">Go 环境安装&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/gohugoio/hugo">Hugo 安装&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="文档查询">文档查询&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>技术栈&lt;/th>
+ &lt;th>官方文档&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>HTML&lt;/td>
+ &lt;td>&lt;a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML">MDN Web 文档&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CSS&lt;/td>
+ &lt;td>&lt;a href="https://cssreference.io/">CSS 参考&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JS&lt;/td>
+ &lt;td>&lt;a href="https://zh.javascript.info/">JavaScript&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Go&lt;/td>
+ &lt;td>&lt;a href="https://go.dev/doc/">Go 文档&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Hugo&lt;/td>
+ &lt;td>&lt;a href="https://gohugo.io/templates/introduction/">Hugo 模板语法&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="框架">框架&lt;/h2>
+&lt;h3 id="baseof">baseof&lt;/h3>
+&lt;p>样式参考 &lt;a href="https://game.bilibili.com/platform">B 站游戏中心&lt;/a>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	{{ partial &amp;#34;head.html&amp;#34; . }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		{{ block &amp;#34;header&amp;#34; . }}{{ partial &amp;#34;header.html&amp;#34; . }}{{ end }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&amp;lt;&lt;span style="color:#f92672">main&lt;/span>&amp;gt;{{ block &amp;#34;main&amp;#34; . }}{{ end }}&amp;lt;/&lt;span style="color:#f92672">main&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		{{ block &amp;#34;footer&amp;#34; . }}{{ partial &amp;#34;footer.html&amp;#34; . }}{{ end }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="header">header&lt;/h3>
+&lt;p>header 的自定义配置在 &lt;code>/data/custom-headers/xxx.yml&lt;/code> ，配置格式如下：&lt;/p></description></item><item><title>卧推初步入门</title><link>https://momoairi.github.io/bench-press/</link><pubDate>Mon, 19 May 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/bench-press/</guid><description>&lt;p>针对半年来卧推的变化的个人总结。&lt;/p></description></item><item><title>线性计划</title><link>https://momoairi.github.io/linear-stronglifts-plan/</link><pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/linear-stronglifts-plan/</guid><description>&lt;h1 id="线性计划">线性计划&lt;/h1>
+&lt;p>初次接触力量训练者都可以尝试的、按线性进行重量递增的计划。&lt;/p>
+&lt;h2 id="ab-轮-5x5">AB 轮 5X5&lt;/h2>
+&lt;h3 id="训练方式">训练方式&lt;/h3>
+&lt;ul>
+&lt;li>A 指 深蹲、卧推、杠铃划船。&lt;/li>
+&lt;li>B 指 深蹲、推举、硬拉。&lt;/li>
+&lt;li>训练原则为练一休一，AB 轮换。&lt;/li>
+&lt;/ul>
+&lt;h3 id="注意事项">注意事项&lt;/h3>
+&lt;ul>
+&lt;li>硬拉做 1X5，其他动作为 5X5。&lt;/li>
+&lt;li>初始重量从 5 RM 的 50% 开始。&lt;/li>
+&lt;li>每次训练都比上次加重 15% -&amp;gt; 1%（预估好使用大概率完成组数的重量加重）。&lt;/li>
+&lt;li>加重时未完成规定组次则停止加重直至完成。&lt;/li>
+&lt;li>组间休息 3~5 分钟。&lt;/li>
+&lt;/ul>
+&lt;h2 id="madcow-5x5">MadCow 5x5&lt;/h2>
+&lt;h3 id="训练方式-1">训练方式&lt;/h3>
+&lt;ul>
+&lt;li>动作和 AB 轮换 5X5 相同，但每周都重复 ABA，不会进行 BAB。&lt;/li>
+&lt;/ul>
+&lt;h3 id="注意事项-1">注意事项&lt;/h3>
+&lt;ul>
+&lt;li>MadCow 的 5X5 重量是递增的。&lt;/li>
+&lt;li>周一时的重量选择为 50%x、62.5%x、75%x、87.5%x、100%x，x = 92.5% 5RM。&lt;/li>
+&lt;li>周三为 4X5，重量选择为 50%x、62.5%x、75%x、75%x（深蹲、推举）和 62.5%x、75%x、87.5%x、100%x（硬拉），x = 92.5% 5RM。&lt;/li>
+&lt;li>周五做 4X5 + 1X3 + 1X8，重量选择为 52.5%x、65%x、77.5%x、90%x、102.5%、77.5%，x = 92.5% 5RM。&lt;/li>
+&lt;li>组间休息 3~5 分钟。&lt;/li>
+&lt;li>每周加重 2.5%。&lt;/li>
+&lt;/ul>
+&lt;h2 id="线性计划定制版">线性计划定制版&lt;/h2>
+&lt;h3 id="训练方式-2">训练方式&lt;/h3>
+&lt;ul>
+&lt;li>将训练动作分为主项（深蹲、卧推、硬拉、推举）、次项（针对主项的弱点强化类动作）、辅项（增肌泵感类动作）。&lt;/li>
+&lt;li>主项动作深蹲卧推做重量递增的 5X5，推举、硬拉做 2X3，周五深蹲、卧推；次项动作做 1X8；辅项动作做 2XAMRAP（留一个余量防止恢复不过来）。&lt;/li>
+&lt;li>主项设定基准动作 G（可以从秒起的 1RM 重量的 44% 开始），每次训练从 G 开始重量递增。&lt;/li>
+&lt;li>每周基准重量 G 提高 10%（第一周或者刚减载过可以多一些） -&amp;gt; 1%（1% 加不了的话减载）。&lt;/li>
+&lt;li>每四周一次主动减载（G = 0.8G）。&lt;/li>
+&lt;li>计划里任何项目不允许做会把疲劳带到第二天的力竭程度。&lt;/li>
+&lt;/ul>
+&lt;h3 id="课表">课表&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;/th>
+ &lt;th>级别&lt;/th>
+ &lt;th>动作选取示例&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>周一&lt;/td>
+ &lt;td>主项&lt;!-- raw HTML omitted -->次项&lt;!-- raw HTML omitted -->辅项&lt;/td>
+ &lt;td>深蹲+卧推&lt;!-- raw HTML omitted -->地板卧推&lt;!-- raw HTML omitted -->杠铃划船+罗马尼亚硬拉&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>周二&lt;/td>
+ &lt;td>主项&lt;!-- raw HTML omitted -->次项&lt;!-- raw HTML omitted -->辅项&lt;/td>
+ &lt;td>-&lt;!-- raw HTML omitted -->-&lt;!-- raw HTML omitted -->-&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>周三&lt;/td>
+ &lt;td>主项&lt;!-- raw HTML omitted -->次项&lt;!-- raw HTML omitted -->辅项&lt;/td>
+ &lt;td>深蹲+硬拉+推举&lt;!-- raw HTML omitted -->-&lt;!-- raw HTML omitted -->臂屈伸+面拉&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>周四&lt;/td>
+ &lt;td>主项&lt;!-- raw HTML omitted -->次项&lt;!-- raw HTML omitted -->辅项&lt;/td>
+ &lt;td>-&lt;!-- raw HTML omitted -->-&lt;!-- raw HTML omitted -->-&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>周五&lt;/td>
+ &lt;td>主项&lt;!-- raw HTML omitted -->次项&lt;!-- raw HTML omitted -->辅项&lt;/td>
+ &lt;td>深蹲+卧推&lt;!-- raw HTML omitted -->暂停深蹲&lt;!-- raw HTML omitted -->引体向上+腿弯举&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>周六&lt;/td>
+ &lt;td>主项&lt;!-- raw HTML omitted -->次项&lt;!-- raw HTML omitted -->辅项&lt;/td>
+ &lt;td>-&lt;!-- raw HTML omitted -->-&lt;!-- raw HTML omitted -->-&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>周日&lt;/td>
+ &lt;td>主项&lt;!-- raw HTML omitted -->次项&lt;!-- raw HTML omitted -->辅项&lt;/td>
+ &lt;td>-&lt;!-- raw HTML omitted -->-&lt;!-- raw HTML omitted -->-&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>《魔法工坊》初稿</title><link>https://momoairi.github.io/maho-atorie/</link><pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/maho-atorie/</guid><description/></item><item><title>计时系统</title><link>https://momoairi.github.io/posts/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E8%AE%A1%E6%97%B6%E7%B3%BB%E7%BB%9F/</link><pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/posts/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E8%AE%A1%E6%97%B6%E7%B3%BB%E7%BB%9F/</guid><description/></item><item><title>GitHub 终端超时</title><link>https://momoairi.github.io/github-timeout/</link><pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/github-timeout/</guid><description/></item><item><title>Win11 重装</title><link>https://momoairi.github.io/win11-reinstall/</link><pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/win11-reinstall/</guid><description/></item><item><title>开发 VSCode 扩展</title><link>https://momoairi.github.io/vscode-extension-development/</link><pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/vscode-extension-development/</guid><description/></item><item><title>减脂原理</title><link>https://momoairi.github.io/reduce-fat/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/reduce-fat/</guid><description/></item><item><title>AiriFlow</title><link>https://momoairi.github.io/airi-flow/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/airi-flow/</guid><description>&lt;p>改html&lt;/p>
+&lt;p>&lt;a href="https://www.bilibili.com/video/BV19e4y1q7JJ">十分钟学会正确的github工作流，和开源作者们使用同一套流程&lt;/a>&lt;/p></description></item><item><title>Eggy</title><link>https://momoairi.github.io/eggy/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/eggy/</guid><description/></item><item><title>npm 超时</title><link>https://momoairi.github.io/npm-timeout/</link><pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/npm-timeout/</guid><description/></item><item><title>快速求平方根的倒数</title><link>https://momoairi.github.io/fast-inverse-square-root/</link><pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/fast-inverse-square-root/</guid><description/></item><item><title>C++八股文复习</title><link>https://momoairi.github.io/posts/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c++%E5%85%AB%E8%82%A1%E6%96%87%E5%A4%8D%E4%B9%A0/</link><pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/posts/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c++%E5%85%AB%E8%82%A1%E6%96%87%E5%A4%8D%E4%B9%A0/</guid><description/></item><item><title/><link>https://momoairi.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/about/</guid><description/></item></channel></rss>
