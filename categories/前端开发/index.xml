@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端开发 on MomoAiri</title><link>https://momoairi.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link><description>Recent content in 前端开发 on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 主题开发：kgnmrin</title><link>https://momoairi.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/hugo-theme-kgnmrin/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/hugo-theme-kgnmrin/</guid><description>&lt;h1 id="hugo-主题开发kgnmrin">Hugo 主题开发：kgnmrin&lt;/h1>
+&lt;p>找不到特别合眼的主题，所以自己做了个。核心就是使用组件为各个页面的部分进行自定义内容。这样一来主题就不用去提供关于页面、友链页面、文档专题的具体功能了，通过自定义就能组合出来相应的效果。&lt;/p>
+&lt;h2 id="准备">准备&lt;/h2>
+&lt;h3 id="环境">环境&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/">Go 环境安装&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/gohugoio/hugo">Hugo 安装&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="文档查询">文档查询&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>技术栈&lt;/th>
+ &lt;th>官方文档&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>HTML&lt;/td>
+ &lt;td>&lt;a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML">MDN Web 文档&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CSS&lt;/td>
+ &lt;td>&lt;a href="https://cssreference.io/">CSS 参考&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JS&lt;/td>
+ &lt;td>&lt;a href="https://zh.javascript.info/">JavaScript&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Go&lt;/td>
+ &lt;td>&lt;a href="https://go.dev/doc/">Go 文档&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Hugo&lt;/td>
+ &lt;td>&lt;a href="https://gohugo.io/templates/introduction/">Hugo 模板语法&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="主题样式参考">主题样式参考&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://game.bilibili.com/platform">bilibli 游戏中心&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.boxmoe.com/">盒子萌&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="框架">框架&lt;/h2>
+&lt;h3 id="baseof">baseof&lt;/h3>
+&lt;p>样式参考 &lt;a href="https://game.bilibili.com/platform">B 站游戏中心&lt;/a>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	{{ partial &amp;#34;head.html&amp;#34; . }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		{{ block &amp;#34;header&amp;#34; . }}{{ partial &amp;#34;header.html&amp;#34; . }}{{ end }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&amp;lt;&lt;span style="color:#f92672">main&lt;/span>&amp;gt;{{ block &amp;#34;main&amp;#34; . }}{{ end }}&amp;lt;/&lt;span style="color:#f92672">main&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		{{ block &amp;#34;footer&amp;#34; . }}{{ partial &amp;#34;footer.html&amp;#34; . }}{{ end }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="header">header&lt;/h3>
+&lt;p>header 的自定义配置在 &lt;code>/data/custom-headers/xxx.yml&lt;/code> ，配置格式如下：&lt;/p></description></item></channel></rss>

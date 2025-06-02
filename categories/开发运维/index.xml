@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发运维 on MomoAiri</title><link>https://momoairi.github.io/categories/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/</link><description>Recent content in 开发运维 on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/categories/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub 终端超时</title><link>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/GitHub-%E7%BB%88%E7%AB%AF%E8%B6%85%E6%97%B6/</link><pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/GitHub-%E7%BB%88%E7%AB%AF%E8%B6%85%E6%97%B6/</guid><description>&lt;h1 id="github-终端超时">GitHub 终端超时&lt;/h1>
+&lt;blockquote>
+&lt;p>遇到 GitHub 访问正常，但在 Shell 里 clone 超时，使用下面这个代理一下。&lt;/p>&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>git config --global http.proxy http://127.0.0.1:&amp;lt;VPN run port&amp;gt;
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>git config --global https.proxy https://127.0.0.1:&amp;lt;VPN run port&amp;gt;
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>使用 ssh 的版本&lt;/p>&lt;/blockquote>
+&lt;p>到 C:\Users&amp;lt;User Name&amp;gt;.ssh 目录下，新建一个 config 文件（无后缀名）&lt;/p>
+&lt;pre tabindex="0">&lt;code>ProxyCommand &amp;#34;C:\Program Files\Git\mingw64\bin\connect&amp;#34; -S 127.0.0.1:&amp;lt;VPN run port&amp;gt; -a none %h %p
+
+Host github.com
+ User git
+ Port 22
+ Hostname github.com
+ IdentityFile &amp;#34;C:\Users\&amp;lt;User Name&amp;gt;\.ssh\id_ed25519&amp;#34;
+ TCPKeepAlive yes
+
+Host ssh.github.com
+ User git
+ Port 443
+ Hostname ssh.github.com
+ IdentityFile &amp;#34;C:\Users\&amp;lt;User Name&amp;gt;\.ssh\id_ed25519&amp;#34;
+ TCPKeepAlive yes
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>ssh -T git@github.com
+&lt;/code>&lt;/pre></description></item><item><title>Win11 重装</title><link>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/Win11-%E9%87%8D%E8%A3%85/</link><pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/Win11-%E9%87%8D%E8%A3%85/</guid><description>&lt;h1 id="win11-重装">Win11 重装&lt;/h1>
+&lt;p>Win11 才加入了 mac 上早就有的文件管理器的分页功能，不过为了这个功能又得忍着 Win11 很恶心的右键更多选项。&lt;/p>
+&lt;p>安装时找到了一个很好用的激活工具 &lt;a href="https://massgrave.dev/">Microsoft Activation Scripts (MAS)&lt;/a>。&lt;/p>
+&lt;p>&lt;strong>安装时绕过网络&lt;/strong>&lt;/p>
+&lt;p>拔网线&lt;/p>
+&lt;p>Shift + F10&lt;/p>
+&lt;pre tabindex="0">&lt;code>taskmgr
+&lt;/code>&lt;/pre>&lt;p>结束网络相关的 Windows 进程&lt;/p>
+&lt;p>&lt;strong>系统激活&lt;/strong>&lt;/p>
+&lt;p>Enter PowerShell&lt;/p>
+&lt;pre tabindex="0">&lt;code>irm https://massgrave.dev/get | iex
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>1
+&lt;/code>&lt;/pre></description></item><item><title>AiriFlow</title><link>https://momoairi.github.io/airi-flow/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/airi-flow/</guid><description>&lt;h1 id="airiflow">AiriFlow&lt;/h1>
+&lt;p>学习微软的 Git 开发流程后，取其糟粕、去其精华（大雾）的个人版本控制流程。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.bilibili.com/video/BV19e4y1q7JJ">十分钟学会正确的github工作流，和开源作者们使用同一套流程&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="branch">Branch&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>master&lt;/code>: 最新的发行版&lt;/li>
+&lt;li>&lt;code>rls_[version]&lt;/code>: 历史版本&lt;/li>
+&lt;li>&lt;code>dev&lt;/code>: 主干开发分支&lt;/li>
+&lt;li>&lt;code>feat_[name]&lt;/code>: 功能分支&lt;/li>
+&lt;li>&lt;code>fix_[name]&lt;/code>: 修复分支&lt;/li>
+&lt;/ul>
+&lt;h2 id="flow">Flow&lt;/h2>
+&lt;ul>
+&lt;li>New repository: -&amp;gt; master -&amp;gt; dev&lt;/li>
+&lt;li>New project: -&amp;gt; feature doc -&amp;gt; feature todos -&amp;gt; dev&lt;/li>
+&lt;li>Test feature: fix → merge into dev&lt;/li>
+&lt;li>Test on stage dev: fix in dev → merge into master → test as mirror → patch as rls&lt;/li>
+&lt;/ul></description></item><item><title>npm 超时</title><link>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/npm-%E8%B6%85%E6%97%B6/</link><pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/npm-%E8%B6%85%E6%97%B6/</guid><description>&lt;h1 id="npm-超时">npm 超时&lt;/h1>
+&lt;h2 id="清理缓存">清理缓存&lt;/h2>
+&lt;pre tabindex="0">&lt;code>npm cache clean --force
+&lt;/code>&lt;/pre>&lt;h2 id="镜像源加速">镜像源加速&lt;/h2>
+&lt;pre tabindex="0">&lt;code>npm config set registry https://registry.npmmirror.com
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>npm config set registry https://mirrors.cloud.tencent.com/npm/
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>npm config set registry https://mirrors.tuna.tsinghua.edu.cn/npm/
+&lt;/code>&lt;/pre>&lt;h2 id="设置-https-代理">设置 HTTP(S) 代理&lt;/h2>
+&lt;pre tabindex="0">&lt;code>npm config set proxy http://127.0.0.1:&amp;lt;VPN run port&amp;gt;
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>npm config set https-proxy http://127.0.0.1:&amp;lt;VPN run port&amp;gt;
+&lt;/code>&lt;/pre></description></item></channel></rss>

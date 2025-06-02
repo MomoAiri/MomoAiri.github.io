@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>运动知识 on MomoAiri</title><link>https://momoairi.github.io/tags/%E8%BF%90%E5%8A%A8%E7%9F%A5%E8%AF%86/</link><description>Recent content in 运动知识 on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/tags/%E8%BF%90%E5%8A%A8%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml"/><item><title>减脂原理</title><link>https://momoairi.github.io/%E8%BF%90%E5%8A%A8%E5%81%A5%E5%BA%B7/%E5%87%8F%E8%84%82%E5%8E%9F%E7%90%86/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E8%BF%90%E5%8A%A8%E5%81%A5%E5%BA%B7/%E5%87%8F%E8%84%82%E5%8E%9F%E7%90%86/</guid><description>&lt;h1 id="减脂原理">减脂原理&lt;/h1>
+&lt;p>$$
+\text{热量缺口} = \left(1 - \frac{\text{热量摄入}}{\text{基础代谢} + \text{活动消耗}}\right) \times \text{100%}
+$$&lt;/p>
+&lt;h2 id="热量来源">热量来源&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>考虑项&lt;/th>
+ &lt;th>碳水&lt;/th>
+ &lt;th>脂肪&lt;/th>
+ &lt;th>蛋白质&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>按物质的热值计算&lt;/td>
+ &lt;td>4.1（大卡/克）&lt;/td>
+ &lt;td>9.45（大卡/克）&lt;/td>
+ &lt;td>5.65（大卡/克）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>考虑吸收率后&lt;/td>
+ &lt;td>4（大卡/克）&lt;/td>
+ &lt;td>9（大卡/克）&lt;/td>
+ &lt;td>4（大卡/克）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>考虑食物热效应后&lt;/td>
+ &lt;td>3.8（大卡/克）&lt;/td>
+ &lt;td>8.55（大卡/克）&lt;/td>
+ &lt;td>2.8（大卡/克）&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="摄入预估">摄入预估&lt;/h2>
+&lt;p>代谢预测公式对于具体个人而言偏差太大，没有可操作空间。&lt;/p>
+&lt;p>实际管理时，先使用预测值作为开始执行两周以上，以实际的变化来估计个人身体情况。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>Harris–Benedict&lt;/code> 公式参考&lt;br>
+BMR = (13.397m + 4.799h - 5.677a + 88.362) kcal/天。&lt;br>
+m 为体重，单位为 kg。h 为身高，单位为 cm。a 为年龄。&lt;/p>&lt;/blockquote>
+&lt;h3 id="注意事项">注意事项&lt;/h3>
+&lt;ul>
+&lt;li>储水、空腹等因素对人的体重影响更大，因此短期内的体重变化是减脂不考虑的。&lt;/li>
+&lt;li>计算摄入热量时，需要注意把吸油的炒菜、固态脂肪计算在内。&lt;/li>
+&lt;/ul>
+&lt;h2 id="管理胰岛素">管理胰岛素&lt;/h2>
+&lt;p>胰岛素的主要功能之一为转运葡萄糖和氨基酸来促进增肌增脂。&lt;/p>
+&lt;p>减脂时，实践层面需要增肌训练后刺激胰岛素（摄入碳水），平时保持胰岛素相对稳定。&lt;/p>
+&lt;h2 id="体脂率自查表">体脂率自查表&lt;/h2>
+&lt;p>并不准确、但大多数情况都会有这样的趋势——即靠近腹部的地方更容易堆积皮下脂肪。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>体脂率&lt;/th>
+ &lt;th>状态&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>12%&lt;/td>
+ &lt;td>腹肌清晰可见&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>15%&lt;/td>
+ &lt;td>腹部堆积了一定的脂肪，但大腿肌肉、胸部肌肉清晰明显&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>18%&lt;/td>
+ &lt;td>小臂肌肉清晰明显&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>21%&lt;/td>
+ &lt;td>手背血管还能看清&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>24%&lt;/td>
+ &lt;td>手背血管也看不清了，内脏中开始堆积脂肪&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="糖">糖&lt;/h2>
+&lt;h3 id="单糖">单糖&lt;/h3>
+&lt;ul>
+&lt;li>己糖 $C_6H_{12}O_6$（如葡萄糖、果糖、半乳糖）&lt;/li>
+&lt;li>核糖 $C_5H_{10}O_5$（RNA成分）&lt;/li>
+&lt;li>丙糖 $C_3H_6O_3$（如甘油醛）&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>葡萄糖（醛糖）&lt;/strong>&lt;/p></description></item></channel></rss>
