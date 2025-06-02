@@ -2,7 +2,7 @@
 	width: clamp(300px, 100%, 1440px);
 	margin: 0 auto;
 	padding: 0 max(20px, calc((100% - 1440px) / 2));
-  }
+}
 
 .layout-wrapper {
 	display: flex;
@@ -21,9 +21,11 @@
 	flex-shrink: 0;
 	transition: transform 0.3s ease;
 	position: sticky;
-	top: 20px; /* 根据需要调整 */
-  align-self: flex-start; /* 顶部对齐 */
-  height: fit-content;
+	top: 20px;
+	/* 根据需要调整 */
+	align-self: flex-start;
+	/* 顶部对齐 */
+	height: fit-content;
 }
 
 .sidebar-toggle {

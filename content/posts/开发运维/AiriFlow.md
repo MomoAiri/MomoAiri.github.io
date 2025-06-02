@@ -8,12 +8,6 @@ description: '[十分钟学会正确的github工作流，和开源作者们使�
 # references: '<a href="https://www.bilibili.com/video/BV19e4y1q7JJ" target="_blank">十分钟学会正确的github工作流，和开源作者们使用同一套流程</a>'
 ---
 
-改html
-
-[十分钟学会正确的github工作流，和开源作者们使用同一套流程](https://www.bilibili.com/video/BV19e4y1q7JJ)
-
-<!--more-->
-
 # AiriFlow
 
 学习微软的 Git 开发流程后，取其糟粕、去其精华（大雾）的个人版本控制流程。

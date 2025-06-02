@@ -3,10 +3,8 @@ title: npm 超时
 date: 2024-06-11
 categories: ["开发运维"]
 tags: ["Node.js"]
-url: npm-timeout
+url: 开发运维/npm-超时
 ---
-
-<!--more-->
 
 # npm 超时
 

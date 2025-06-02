@@ -3,10 +3,8 @@ title: GitHub 终端超时
 date: 2025-01-20
 categories: ["开发运维"]
 tags: ["Git", "GitHub"]
-url: github-timeout
+url: 开发运维/GitHub-终端超时
 ---
-
-<!--more-->
 
 # GitHub 终端超时
 
