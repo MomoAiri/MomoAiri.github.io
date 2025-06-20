@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Node.js on MomoAiri</title><link>https://momoairi.github.io/tags/node.js/</link><description>Recent content in Node.js on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml"/><item><title>npm 超时</title><link>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/npm-%E8%B6%85%E6%97%B6/</link><pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4/npm-%E8%B6%85%E6%97%B6/</guid><description>&lt;h1 id="npm-超时">npm 超时&lt;/h1>
+&lt;h2 id="清理缓存">清理缓存&lt;/h2>
+&lt;pre tabindex="0">&lt;code>npm cache clean --force
+&lt;/code>&lt;/pre>&lt;h2 id="镜像源加速">镜像源加速&lt;/h2>
+&lt;pre tabindex="0">&lt;code>npm config set registry https://registry.npmmirror.com
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>npm config set registry https://mirrors.cloud.tencent.com/npm/
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>npm config set registry https://mirrors.tuna.tsinghua.edu.cn/npm/
+&lt;/code>&lt;/pre>&lt;h2 id="设置-https-代理">设置 HTTP(S) 代理&lt;/h2>
+&lt;pre tabindex="0">&lt;code>npm config set proxy http://127.0.0.1:&amp;lt;VPN run port&amp;gt;
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>npm config set https-proxy http://127.0.0.1:&amp;lt;VPN run port&amp;gt;
+&lt;/code>&lt;/pre></description></item></channel></rss>

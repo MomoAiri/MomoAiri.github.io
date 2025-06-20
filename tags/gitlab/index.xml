@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gitlab on MomoAiri</title><link>https://momoairi.github.io/tags/gitlab/</link><description>Recent content in Gitlab on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml"/><item><title>AiriFlow</title><link>https://momoairi.github.io/airi-flow/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/airi-flow/</guid><description>&lt;h1 id="airiflow">AiriFlow&lt;/h1>
+&lt;p>学习微软的 Git 开发流程后，取其糟粕、去其精华（大雾）的个人版本控制流程。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.bilibili.com/video/BV19e4y1q7JJ">十分钟学会正确的github工作流，和开源作者们使用同一套流程&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="branch">Branch&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>master&lt;/code>: 最新的发行版&lt;/li>
+&lt;li>&lt;code>rls_[version]&lt;/code>: 历史版本&lt;/li>
+&lt;li>&lt;code>dev&lt;/code>: 主干开发分支&lt;/li>
+&lt;li>&lt;code>feat_[name]&lt;/code>: 功能分支&lt;/li>
+&lt;li>&lt;code>fix_[name]&lt;/code>: 修复分支&lt;/li>
+&lt;/ul>
+&lt;h2 id="flow">Flow&lt;/h2>
+&lt;ul>
+&lt;li>New repository: -&amp;gt; master -&amp;gt; dev&lt;/li>
+&lt;li>New project: -&amp;gt; feature doc -&amp;gt; feature todos -&amp;gt; dev&lt;/li>
+&lt;li>Test feature: fix → merge into dev&lt;/li>
+&lt;li>Test on stage dev: fix in dev → merge into master → test as mirror → patch as rls&lt;/li>
+&lt;/ul></description></item></channel></rss>

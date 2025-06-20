@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>游戏开发 on MomoAiri</title><link>https://momoairi.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link><description>Recent content in 游戏开发 on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sun, 16 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml"/><item><title>《魔法工坊》初稿</title><link>https://momoairi.github.io/maho-atorie/</link><pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/maho-atorie/</guid><description>&lt;h1 id="魔法工坊初稿">《魔法工坊》初稿&lt;/h1>
+&lt;p>工程名用 MahoAtorie。&lt;/p>
+&lt;p>玩家被投放到一个「真」无限大的随机世界，通过掌握魔法来不断深入探索和挑战随机 BOSS。&lt;/p>
+&lt;h2 id="游戏流程">游戏流程&lt;/h2>
+&lt;p>创建岛屿 -&amp;gt; 生存建造 -&amp;gt; 创造编辑魔法 -&amp;gt; 收集生物 -&amp;gt; 深入岛屿&lt;/p>
+&lt;h2 id="魔法设计">魔法设计&lt;/h2>
+&lt;h3 id="交互类魔法">交互类魔法&lt;/h3>
+&lt;blockquote>
+&lt;p>用来方便增加玩家在地图中移动方式、场景交互的设定&lt;/p>&lt;/blockquote>
+&lt;h3 id="建造类魔法">建造类魔法&lt;/h3>
+&lt;blockquote>
+&lt;p>用来方便运行时地图数据作为游玩的一部分的设定&lt;/p>&lt;/blockquote>
+&lt;h3 id="基因类魔法">基因类魔法&lt;/h3>
+&lt;blockquote>
+&lt;p>用来方便玩家修改生物伙伴的 ai 的设定&lt;/p>&lt;/blockquote>
+&lt;h2 id="玩家设计">玩家设计&lt;/h2>
+&lt;h2 id="地图设计">地图设计&lt;/h2>
+&lt;h2 id="特殊设定">特殊设定&lt;/h2>
+&lt;h3 id="夜晚降临">夜晚降临&lt;/h3>
+&lt;p>如果玩家在建造区域附近，生物冲向玩家或玩家的建筑，如果玩家离得较远且不是特别区域则直接清数据，限制岛屿的存储占用无限增长。&lt;/p></description></item><item><title>计时系统</title><link>https://momoairi.github.io/posts/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E8%AE%A1%E6%97%B6%E7%B3%BB%E7%BB%9F/</link><pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/posts/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E8%AE%A1%E6%97%B6%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h1 id="计时系统">计时系统&lt;/h1></description></item><item><title>Eggy</title><link>https://momoairi.github.io/eggy/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/eggy/</guid><description/></item><item><title>快速求平方根的倒数</title><link>https://momoairi.github.io/fast-inverse-square-root/</link><pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/fast-inverse-square-root/</guid><description/></item></channel></rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>跨平台开发 on MomoAiri</title><link>https://momoairi.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91/</link><description>Recent content in 跨平台开发 on MomoAiri</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://momoairi.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml"/><item><title>Tauri 开发</title><link>https://momoairi.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Tauri-%E5%BC%80%E5%8F%91/</link><pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate><guid>https://momoairi.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Tauri-%E5%BC%80%E5%8F%91/</guid><description>&lt;h1 id="tauri-开发">Tauri 开发&lt;/h1>
+&lt;p>Tauri 是一个类似于 Electron 的跨平台 Web 开发方案，使用操作系统的原生 WebView 渲染、Rust 作为后台开发语言。&lt;/p>
+&lt;h2 id="开发环境配置">开发环境配置&lt;/h2>
+&lt;h3 id="rust">Rust&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>工具&lt;/th>
+ &lt;th>下载地址&lt;/th>
+ &lt;th>验证命令&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Rust&lt;/td>
+ &lt;td>&lt;a href="https://www.rust-lang.org/tools/install">Rust Install&lt;/a>&lt;/td>
+ &lt;td>rustc &amp;ndash;version&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Cargo&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>cargo &amp;ndash;vresion&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Rust Rover&lt;/td>
+ &lt;td>&lt;a href="https://www.jetbrains.com/rust/download">Rust Rover&lt;/a>&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="msvc">MSVC&lt;/h3>
+&lt;p>Windows 下需要 &lt;a href="https://visualstudio.microsoft.com/downloads/">MSVC&lt;/a>。&lt;/p>
+&lt;p>从网站或者 &lt;code>winget install Microsoft.VisualStudio.2022.BuildTools --override &amp;quot;--add Microsoft.VisualStudio.Workload.VCTools&amp;quot;&lt;/code> 安装。&lt;/p>
+&lt;h3 id="tauri">Tauri&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cargo install tauri-cli
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install -g pnpm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="项目构建">项目构建&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pnpm create tauri-app@latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pnpm tauri init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pnpm tauri dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pnpm tauri build
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
