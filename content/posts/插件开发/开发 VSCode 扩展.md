@@ -3,10 +3,8 @@ title: 开发 VSCode 扩展
 date: 2024-12-09
 categories: ["插件开发"]
 tags: ["VSCode", ]
-url: vscode-extension-development
+url: 插件开发/开发-VSCode-扩展
 ---
-
-<!--more-->
 
 # 开发 VSCode 扩展
 

@@ -1,12 +1,12 @@
 ---
-title: Win11 重装
+title: Win11 激活
 date: 2025-01-20
 categories: ["开发运维"]
 tags: []
-url: 开发运维/Win11-重装
+url: 开发运维/win11-activation
 ---
 
-# Win11 重装
+# Win11 激活
 
 Win11 才加入了 mac 上早就有的文件管理器的分页功能，不过为了这个功能又得忍着 Win11 很恶心的右键更多选项。
 
