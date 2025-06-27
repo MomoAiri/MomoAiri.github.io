@@ -29,10 +29,15 @@ jobs:
           cd themes/kgmnrin/assets/sticker-editor
           npm ci --prefer-offline  # 使用ci安装依赖更可靠
 
-      # 关键修改：构建React到static目录
       - name: Build React App
         run: |
-          npm run build-sticker-editor -- --output-path /static/sticker-editor
+          npm run build-sticker-editor
+
+      - name: Copy React Build to Hugo Static
+        run: |
+          rm -rf static/sticker-editor
+          mkdir -p static/sticker-editor
+          cp -r themes/kgmnrin/assets/sticker-editor/* static/sticker-editor/
 
       - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
@@ -42,10 +47,6 @@ jobs:
 
       - name: Build Hugo
         run: hugo --minify
-
-      # 验证React产物是否在public中（调试用）
-      - name: Verify React Build
-        run: ls -R public | grep sticker-editor
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
