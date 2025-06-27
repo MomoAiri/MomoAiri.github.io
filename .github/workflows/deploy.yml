@@ -47,6 +47,11 @@ jobs:
       - name: Build Hugo
         run: hugo --minify
 
+      - name: Copy React Build to Hugo Public
+        run: |
+          mkdir -p static/sticker-editor
+          cp -r themes/kgmnrin/static/sticker-editor/* public/sticker-editor/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
