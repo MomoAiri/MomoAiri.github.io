@@ -35,7 +35,6 @@ jobs:
 
       - name: Copy React Build to Hugo Static
         run: |
-          rm -rf static/sticker-editor
           mkdir -p static/sticker-editor
           cp -r themes/kgmnrin/static/sticker-editor/* static/sticker-editor/
 
