@@ -1,0 +1,89 @@
+.app {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font-family: Arial, sans-serif;
+  }
+  
+  .toolbar {
+	padding: 10px;
+	background-color: #f0f0f0;
+	border-bottom: 1px solid #ddd;
+	display: flex;
+	gap: 10px;
+  }
+  
+  .toolbar button {
+	padding: 8px 12px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .toolbar button:hover {
+	background-color: #f9f9f9;
+  }
+  
+  .main-content {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+  }
+  
+  .sticker-selector {
+	width: 200px;
+	padding: 15px;
+	background-color: #f8f8f8;
+	border-right: 1px solid #eee;
+	overflow-y: auto;
+  }
+  
+  .sticker-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	margin-top: 10px;
+  }
+  
+  .sticker-thumbnail {
+	width: 100%;
+	cursor: pointer;
+	border: 2px solid transparent;
+	border-radius: 4px;
+  }
+  
+  .sticker-thumbnail:hover {
+	border-color: #4a90e2;
+  }
+  
+  .canvas-editor {
+	flex: 1;
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+	border: 1px solid #ddd;
+  }
+  
+  .property-inspector {
+	padding: 15px;
+	background-color: #f8f8f8;
+	border-top: 1px solid #eee;
+  }
+  
+  .property-group {
+	margin-bottom: 15px;
+  }
+  
+  .property-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+  }
+  
+  .property-group input {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+  }

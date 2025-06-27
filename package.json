@@ -1,0 +1,20 @@
+{
+	"name": "momoairi.github.io",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"build-sticker-editor": "npm --prefix themes/kgmnrin/assets/sticker-editor run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MomoAiri/MomoAiri.github.io.git"
+	},
+	"keywords": [],
+	"author": "momoairi",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/MomoAiri/MomoAiri.github.io/issues"
+	},
+	"homepage": "https://github.com/MomoAiri/MomoAiri.github.io#readme",
+	"description": ""
+}
