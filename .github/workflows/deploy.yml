@@ -28,7 +28,7 @@ jobs:
 
       - name: Build React App
         run: |
-          build-sticker-editor
+          npm run build-sticker-editor
 
       - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
