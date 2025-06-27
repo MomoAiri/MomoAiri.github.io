@@ -38,6 +38,11 @@ jobs:
           mkdir -p static/sticker-editor
           cp -r themes/kgmnrin/static/sticker-editor/* static/sticker-editor/
 
+      - name: Print initial file tree (Debug)
+        run: |
+          echo "### Current File Tree ###"
+          tree -L 3 || ls -R  # 尝试用 tree，失败则用 ls -R
+
       - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
         with:
@@ -47,10 +52,20 @@ jobs:
       - name: Build Hugo
         run: hugo --minify
 
+      - name: Print initial file tree (Debug)
+        run: |
+          echo "### Current File Tree ###"
+          tree -L 3 || ls -R  # 尝试用 tree，失败则用 ls -R
+
       - name: Copy React Build to Hugo Public
         run: |
           mkdir -p static/sticker-editor
           cp -r themes/kgmnrin/static/sticker-editor/* public/sticker-editor/
+
+      - name: Print initial file tree (Debug)
+        run: |
+          echo "### Current File Tree ###"
+          tree -L 3 || ls -R  # 尝试用 tree，失败则用 ls -R
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -59,3 +74,8 @@ jobs:
           publish_dir: ./public
           publish_branch: master
           force_orphan: true
+
+      - name: Print initial file tree (Debug)
+        run: |
+          echo "### Current File Tree ###"
+          tree -L 3 || ls -R  # 尝试用 tree，失败则用 ls -R
