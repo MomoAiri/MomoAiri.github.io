@@ -32,7 +32,7 @@ jobs:
       # 关键修改：构建React到static目录
       - name: Build React App
         run: |
-          npm run build-sticker-editor -- --output-path ../static/sticker-editor
+          npm run build-sticker-editor -- --output-path /static/sticker-editor
 
       - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
