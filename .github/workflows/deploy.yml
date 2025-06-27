@@ -16,6 +16,23 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install React App Dependencies
+        run: |
+          cd themes/kgmnrin/assets/sticker-editor
+          npm install
+
+      - name: Build React App
+        run: |
+          cd themes/kgmnrin/assets/sticker-editor
+          npm run build
+          mkdir -p ../../../static/sticker-editor
+          cp -r dist/* ../../../static/sticker-editor/
+
       - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
         with:
