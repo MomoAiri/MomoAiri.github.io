@@ -30,6 +30,13 @@ jobs:
         run: |
           npm run build-sticker-editor
 
+      - name: Copy React Build to Hugo Static
+        run: |
+          # 假设 Hugo 根目录就是当前目录
+          rm -rf static/sticker-editor
+          mkdir -p static/sticker-editor
+          cp -r themes/kgmnrin/assets/sticker-editor/dist/* static/sticker-editor/
+
       - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
         with:

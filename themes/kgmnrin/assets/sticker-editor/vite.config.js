@@ -6,7 +6,7 @@ export default defineConfig({
 	base: '/sticker-editor/',
 	plugins: [react()],
 	build: {
-		outDir: "../../static/sticker-editor",
+		outDir: "dist",
 		emptyOutDir: true,
 	},
 })
