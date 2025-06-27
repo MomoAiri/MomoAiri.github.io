@@ -30,8 +30,6 @@ jobs:
         run: |
           cd themes/kgmnrin/assets/sticker-editor
           npm run build
-          mkdir -p ../../../static/sticker-editor
-          cp -r dist/* ../../../static/sticker-editor/
 
       - name: Setup Hugo Extended
         uses: peaceiris/actions-hugo@v2
